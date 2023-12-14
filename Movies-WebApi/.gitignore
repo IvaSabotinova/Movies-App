@@ -1,0 +1,9 @@
+# Ignore unnecessary files and directories
+.vs/
+bin/
+obj/
+*.log
+*.suo
+*.user
+
+
