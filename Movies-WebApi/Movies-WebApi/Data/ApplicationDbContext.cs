@@ -22,6 +22,8 @@ namespace MoviesWebApi.Data
             builder.ApplyConfiguration(new RoleConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new UserRoleConfiguration());
+            builder.ApplyConfiguration(new GenreConfiguration());
+            builder.ApplyConfiguration(new MovieConfiguration());
             base.OnModelCreating(builder);
         }
     }
