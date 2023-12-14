@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Movies_WebApi.Data.Configuration;
 
 namespace MoviesWebApi.Data
 {
@@ -18,6 +19,9 @@ namespace MoviesWebApi.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.ApplyConfiguration(new RoleConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new UserRoleConfiguration());
             base.OnModelCreating(builder);
         }
     }

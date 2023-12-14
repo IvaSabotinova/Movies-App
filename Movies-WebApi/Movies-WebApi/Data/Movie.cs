@@ -21,6 +21,7 @@ namespace MoviesWebApi.Data
         [MaxLength(MovieDescriptionMaxLength)]
         public string Description { get; set; } = null!;
 
+        [Range(1, int.MaxValue)]
         public int Duration { get; set; } //in minutes
 
         public DateTime ReleaseDate { get; set; }
@@ -31,6 +32,7 @@ namespace MoviesWebApi.Data
         [Required]
         public string ImageMimeType { get; set; }
 
+        [Range(1, 10.00)]
         public double Rating { get; set; }
 
         public string ApplicationUserId { get; set; }
