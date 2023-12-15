@@ -27,10 +27,7 @@ namespace MoviesWebApi.Data
         public DateTime ReleaseDate { get; set; }
 
         [Required]
-        public byte[] ImageData { get; set; }
-
-        [Required]
-        public string ImageMimeType { get; set; }
+        public string ImageUrl { get; set; }
 
         [Range(1, 10.00)]
         public double Rating { get; set; }
