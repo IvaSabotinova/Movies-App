@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using MoviesWebApi.Data;
 using System.ComponentModel.DataAnnotations;
 using static MoviesWebApi.Data.Constants;
 
 namespace MoviesWebApi.Data.Dto
 {
-    public class MovieCreateDto
+    public class MovieDto
     {
         [Required]
         //[StringLength(MovieTitleMaxLength, MinimumLength = MovieTitleMinLength)]
@@ -27,7 +26,7 @@ namespace MoviesWebApi.Data.Dto
         public DateTime ReleaseDate { get; set; }
 
         [Required]
-       // [RegularExpression(ImageUrlRegex)]
+        [RegularExpression(ImageUrlRegex)]
         public string ImageUrl { get; set; }
 
     }

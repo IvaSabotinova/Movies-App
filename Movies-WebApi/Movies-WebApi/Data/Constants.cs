@@ -24,5 +24,7 @@
 
         public const string ImageMIMETypeRequiredErrorMessage = "Image MIME type is required.";
 
+        public const string MovieDoesNotExist = "Movie does not exist!";
+
     }
 }

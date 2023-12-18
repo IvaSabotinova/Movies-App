@@ -33,7 +33,7 @@ public class Repository<TEntity> : IRepository<TEntity>
             this.DbSet.Attach(entity);
         }
 
-        entry.State = EntityState.Modified;
+        entry.State = EntityState.Modified;       
     }
 
     public void Delete(TEntity entity) => this.DbSet.Remove(entity);

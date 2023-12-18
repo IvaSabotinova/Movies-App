@@ -1,7 +1,6 @@
-﻿using MoviesWebApi.Data.Dto;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using MoviesWebApi.Data;
-using MoviesWebApi.Data.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using MoviesWebApi.Data.Dto;
 
 namespace MoviesWebApi.Services
 {
@@ -9,9 +8,13 @@ namespace MoviesWebApi.Services
     {
         Task<IEnumerable<SelectListItem>> GetAllGenres();
 
-        Task<Movie> CreateMovie(MovieCreateDto movieDto, string userId);
+        Task<Movie> CreateMovie(MovieDto movieDto, string userId);
 
-        Task<Movie> GetMovieById(string id);
+        Task<Movie> GetMovieById(string movieId);
+
+        Task<Movie> UpdateMovie(string movieId, MovieDto movieDto);
+
+        Task DeleteMovie(string movieId);
 
         Task<IEnumerable<Movie>> GetAll();
 
