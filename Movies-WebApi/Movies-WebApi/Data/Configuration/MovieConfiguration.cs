@@ -24,8 +24,9 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 206,
                     Rating = 0, //7.6
                     ReleaseDate = DateTime.ParseExact("18-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/KillersOfTheFlowerMoon.jpeg",                   
-                    ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",                     
+                    ImageUrl = "../../Photos/KillersOfTheFlowerMoon.jpeg",
+                    ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
+                    CreatedOn = DateTime.Now
                 },
                 new Movie()
                 {
@@ -38,6 +39,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("05-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                    ImageUrl = "../../Photos/Freelance.jpeg",                   
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
+                    CreatedOn = DateTime.Now.AddDays(-1)
                 },
                 new Movie()
                 {
@@ -50,6 +52,8 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("12-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                      ImageUrl = "../../Photos/TrollsBandTogether.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
+                     CreatedOn = DateTime.Now.AddDays(-2)                    
+                     
                 },
                 new Movie()
                 {
@@ -62,6 +66,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("17-11-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/Leo.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
+                    CreatedOn = DateTime.Now.AddDays(-3)
                 },
                 new Movie()
                 {
@@ -74,6 +79,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("06-12-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/Wonka.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
+                    CreatedOn = DateTime.Now.AddDays(-4)
                 },
                 new Movie()
                 {
@@ -86,6 +92,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("26-11-2018", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/TheDarkKingdom.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
+                    CreatedOn = DateTime.Now.AddDays(-5)
                 },
                 new Movie()
                 {
@@ -98,6 +105,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("19-07-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/Oppenheimer.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
+                    CreatedOn = DateTime.Now.AddDays(-6)
                 },
                 new Movie()
                 {
@@ -110,6 +118,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("02-09-2017", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                    ImageUrl = "../../Photos/Shockwave-CountdownToDisaster.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
+                    CreatedOn = DateTime.Now.AddDays(-7)
                 },
                 new Movie()
                 {
@@ -122,6 +131,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("15-08-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/AManOfReason.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
+                    CreatedOn = DateTime.Now.AddDays(-8)
                 },
                 new Movie()
                 {
@@ -134,6 +144,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("26-07-2021", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/RobotApocalypse.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
+                    CreatedOn = DateTime.Now.AddDays(-9)
                 },
                 new Movie()
                 {
@@ -146,6 +157,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("12-08-2022", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/Wifelike.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
+                    CreatedOn = DateTime.Now.AddDays(-10)
                 },
                 new Movie()
                 {
@@ -158,6 +170,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("17-05-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/FastX.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
+                    CreatedOn = DateTime.Now.AddDays(-11)
                 },
                 new Movie()
                 {
@@ -170,6 +183,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("25-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/FiveNightsArFreddy's.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
+                    CreatedOn = DateTime.Now.AddDays(-12)
                 },
                 new Movie()
                 {
@@ -182,6 +196,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("12-04-2022", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/ReignOfChaos.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
+                    CreatedOn = DateTime.Now.AddDays(-13)
                 },
                 new Movie()
                 {
@@ -194,6 +209,7 @@ namespace Movies_WebApi.Data.Configuration
                     ReleaseDate = DateTime.ParseExact("15-11-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "../../Photos/TheHungerGames-TheBalladOfSongbirds&Snakes.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
+                    CreatedOn = DateTime.Now.AddDays(-14)
                 }
             };
 

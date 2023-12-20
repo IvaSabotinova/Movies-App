@@ -35,5 +35,7 @@ namespace MoviesWebApi.Data
         public string ApplicationUserId { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
+
+        public DateTime CreatedOn { get; set; }
     }
 }
