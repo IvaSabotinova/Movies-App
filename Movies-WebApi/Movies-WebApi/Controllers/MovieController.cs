@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MoviesWebApi.Data;
 using MoviesWebApi.Data.Dto;
 using MoviesWebApi.Data.Models;
 using MoviesWebApi.Services;
 using System.Net;
-using System.Security.Claims;
 using static MoviesWebApi.Data.Constants;
 
 namespace MoviesWebApi.Controllers
@@ -14,23 +14,32 @@ namespace MoviesWebApi.Controllers
     [ApiController]
     public class MovieController : ControllerBase
     {
-        private readonly IMovieService movieService;
+        private readonly IMovieService movieService;      
         private readonly ApiResponse apiResponse;
 
         public MovieController(IMovieService movieService)
         {
-            this.movieService = movieService;
+            this.movieService = movieService;        
             this.apiResponse = new ApiResponse();
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<ApiResponse>> CreateMovie([FromForm] MovieDto movieCreateDto)
-        {
-            string currentUserId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+        {      
+                      
             try
             {
                 if (ModelState.IsValid)
                 {
+                    string? currentUserId = this.User.FindFirst("id")?.Value;
+                    if (currentUserId == null)
+                    {
+                        this.apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
+                        this.apiResponse.IsSuccess = false;
+                        this.apiResponse.ErrorMessages = new List<string> { UserNotFound };
+                        return this.BadRequest(this.apiResponse);
+                    }
                     Movie newMovie = await this.movieService.CreateMovie(movieCreateDto, currentUserId);
                     this.apiResponse.HttpStatusCode = HttpStatusCode.Created;
                     this.apiResponse.Result = newMovie;
@@ -45,7 +54,8 @@ namespace MoviesWebApi.Controllers
             catch (Exception ex)
             {
                 this.apiResponse.IsSuccess = false;
-                this.apiResponse.ErrorMessages = new List<string> { ex.ToString() };
+               // this.apiResponse.ErrorMessages = new List<string> { ex.ToString() };
+                this.apiResponse.ErrorMessages = new List<string> { ex.Message };
             }
             return this.apiResponse;
         }
@@ -58,7 +68,7 @@ namespace MoviesWebApi.Controllers
             {
                 this.apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
                 this.apiResponse.IsSuccess = false;
-                return BadRequest(this.apiResponse);
+                return this.BadRequest(this.apiResponse);
             }
             Movie movie = await this.movieService.GetMovieById(id);
             if (movie == null)
@@ -66,11 +76,11 @@ namespace MoviesWebApi.Controllers
                 this.apiResponse.HttpStatusCode = HttpStatusCode.NotFound;
                 this.apiResponse.IsSuccess = false;
                 this.apiResponse.ErrorMessages = new List<string> { MovieDoesNotExist };
-                return NotFound(this.apiResponse);
+                return this.NotFound(this.apiResponse);
             }
             this.apiResponse.HttpStatusCode = HttpStatusCode.OK;
             this.apiResponse.Result = movie;
-            return Ok(this.apiResponse);
+            return this.Ok(this.apiResponse);
         }
 
         [HttpPut("{id}")]
@@ -93,6 +103,7 @@ namespace MoviesWebApi.Controllers
             }
             catch (Exception ex)
             {
+                this.apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
                 this.apiResponse.IsSuccess = false;
                 this.apiResponse.ErrorMessages = new List<string> { ex.Message };
             }
@@ -105,7 +116,7 @@ namespace MoviesWebApi.Controllers
         {
             this.apiResponse.HttpStatusCode = HttpStatusCode.OK;
             this.apiResponse.Result = await this.movieService.GetAll();
-            return Ok(this.apiResponse);
+            return this.Ok(this.apiResponse);
         }
 
         [HttpDelete("{id}")]
@@ -116,10 +127,11 @@ namespace MoviesWebApi.Controllers
             {
                 await this.movieService.DeleteMovie(id);
                 this.apiResponse.HttpStatusCode = HttpStatusCode.NoContent;
-                return Ok(this.apiResponse);
+                return this.Ok(this.apiResponse);
             }
             catch (Exception ex)
             {
+                this.apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
                 this.apiResponse.IsSuccess = false;
                 this.apiResponse.ErrorMessages = new List<string> { ex.Message };
             }
