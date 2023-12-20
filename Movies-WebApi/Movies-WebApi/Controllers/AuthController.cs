@@ -12,8 +12,7 @@ using static MoviesWebApi.Data.Constants;
 
 namespace MoviesWebApi.Controllers
 {
-    [Route("api/auth")]
-    //[Route("api/[controller]")]
+    [Route("api/auth")]    
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -62,8 +61,7 @@ namespace MoviesWebApi.Controllers
             this.apiResponse.ErrorMessages.Add(RegisterError);
 
             foreach (IdentityError error in result.Errors)
-            {
-                //this.ModelState.AddModelError(string.Empty, error.Description);
+            {                
                 this.apiResponse.ErrorMessages.Add(error.Description);
             }
 
