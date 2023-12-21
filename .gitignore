@@ -6,6 +6,9 @@ obj/
 *.suo
 *.user
 *.vs/
+.vscode/
+*.vscode/
+
 
 
 
