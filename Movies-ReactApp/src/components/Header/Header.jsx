@@ -1,6 +1,9 @@
 import { Button, Container, Form, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './Header.css';
+
+import Paths from '../../constants/Paths';
 
 import popcornSodaImage from '/images/images-general/popcorn-soda.png';
 
@@ -17,8 +20,8 @@ export default function Header() {
             navbarScroll
           >
             <Image src={popcornSodaImage} alt="popcorn-soda" style={{ maxHeight: '35px' }} roundedCircle />
-            <Nav.Link href="">Home</Nav.Link>
-            <Nav.Link href="">Link</Nav.Link>
+            <Nav.Link as={Link} to={Paths.Home} className="text-white" >Home</Nav.Link>
+            <Nav.Link className="text-white" href="">Link</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="">Action</NavDropdown.Item>
               <NavDropdown.Item href="">

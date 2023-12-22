@@ -16,6 +16,12 @@
   overflow: hidden;
   background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
   height: 600px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-wrapper:hover {
+  transform: scale(1.03); /* Increase size on hover */
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add box shadow on hover */
 }
 
 .image {
@@ -34,6 +40,10 @@
   max-width: 342px;
   height: 101px;
   background-color:  #b3d5f5;
+}
+
+.movie-wrapper:hover .movie-info {
+  background: #302f2f;
 }
 
 .movie-info h3 {

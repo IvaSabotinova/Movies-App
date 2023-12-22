@@ -1,5 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 
 import './Home.css';
+
+import Paths from '../../constants/Paths';
+import { pathToUrl } from '../../utils/PathsUtil';
 
 export default function MovieItem({
     id,
@@ -7,9 +11,14 @@ export default function MovieItem({
     rating,
     imageUrl
 }) {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(pathToUrl(Paths.MovieDetails, { movieId: id }))
+    };
 
     return (
-        <div className="movie-wrapper">
+        <div className="movie-wrapper" onClick={handleClick}>
             <div className="image-box">
                 <img className="image" src={imageUrl} alt="" />
             </div>
