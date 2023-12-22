@@ -24,7 +24,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 206,
                     Rating = 0, //7.6
                     ReleaseDate = DateTime.ParseExact("18-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/KillersOfTheFlowerMoon.jpeg",
+                    ImageUrl = "/images/db-images/KillersOfTheFlowerMoon.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
                     CreatedOn = DateTime.Now
                 },
@@ -37,7 +37,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 108,
                     Rating = 0, //6.2
                     ReleaseDate = DateTime.ParseExact("05-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                   ImageUrl = "../../Photos/Freelance.jpeg",                   
+                   ImageUrl = "/images/db-images/Freelance.jpeg",                   
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
                     CreatedOn = DateTime.Now.AddDays(-1)
                 },
@@ -50,7 +50,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 92,
                     Rating = 0, //7.1
                     ReleaseDate = DateTime.ParseExact("12-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                     ImageUrl = "../../Photos/TrollsBandTogether.jpeg",
+                     ImageUrl = "/images/db-images/TrollsBandTogether.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
                      CreatedOn = DateTime.Now.AddDays(-2)                    
                      
@@ -64,7 +64,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 102,
                     Rating = 0, //7.6
                     ReleaseDate = DateTime.ParseExact("17-11-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/Leo.jpeg",
+                    ImageUrl = "/images/db-images/Leo.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
                     CreatedOn = DateTime.Now.AddDays(-3)
                 },
@@ -77,7 +77,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 117,
                     Rating = 0, //7.0
                     ReleaseDate = DateTime.ParseExact("06-12-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/Wonka.jpeg",
+                    ImageUrl = "/images/db-images/Wonka.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
                     CreatedOn = DateTime.Now.AddDays(-4)
                 },
@@ -90,7 +90,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 85,
                     Rating = 0, //5.7
                     ReleaseDate = DateTime.ParseExact("26-11-2018", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/TheDarkKingdom.jpeg",
+                    ImageUrl = "/images/db-images/TheDarkKingdom.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
                     CreatedOn = DateTime.Now.AddDays(-5)
                 },
@@ -103,7 +103,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 181,
                     Rating = 0, //8.1
                     ReleaseDate = DateTime.ParseExact("19-07-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/Oppenheimer.jpeg",
+                    ImageUrl = "/images/db-images/Oppenheimer.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
                     CreatedOn = DateTime.Now.AddDays(-6)
                 },
@@ -116,7 +116,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 90,
                     Rating = 0, //5.6
                     ReleaseDate = DateTime.ParseExact("02-09-2017", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                   ImageUrl = "../../Photos/Shockwave-CountdownToDisaster.jpeg",
+                   ImageUrl = "/images/db-images/Shockwave-CountdownToDisaster.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
                     CreatedOn = DateTime.Now.AddDays(-7)
                 },
@@ -129,7 +129,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 103,
                     Rating = 0,//5.7
                     ReleaseDate = DateTime.ParseExact("15-08-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/AManOfReason.jpeg",
+                    ImageUrl = "/images/db-images/AManOfReason.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
                     CreatedOn = DateTime.Now.AddDays(-8)
                 },
@@ -142,7 +142,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 87,
                     Rating = 0, //3.4
                     ReleaseDate = DateTime.ParseExact("26-07-2021", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/RobotApocalypse.jpeg",
+                    ImageUrl = "/images/db-images/RobotApocalypse.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
                     CreatedOn = DateTime.Now.AddDays(-9)
                 },
@@ -155,7 +155,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 106,
                     Rating = 0, //7.0
                     ReleaseDate = DateTime.ParseExact("12-08-2022", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/Wifelike.jpeg",
+                    ImageUrl = "/images/db-images/Wifelike.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
                     CreatedOn = DateTime.Now.AddDays(-10)
                 },
@@ -168,7 +168,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 172,
                     Rating = 0, //7.2
                     ReleaseDate = DateTime.ParseExact("17-05-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/FastX.jpeg",
+                    ImageUrl = "/images/db-images/FastX.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
                     CreatedOn = DateTime.Now.AddDays(-11)
                 },
@@ -181,7 +181,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 110,
                     Rating = 0, //7.8
                     ReleaseDate = DateTime.ParseExact("25-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/FiveNightsArFreddy's.jpeg",
+                    ImageUrl = "/images/db-images/FiveNightsArFreddy's.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
                     CreatedOn = DateTime.Now.AddDays(-12)
                 },
@@ -194,7 +194,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 77,
                     Rating = 0, //5.7
                     ReleaseDate = DateTime.ParseExact("12-04-2022", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/ReignOfChaos.jpeg",
+                    ImageUrl = "/images/db-images/ReignOfChaos.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
                     CreatedOn = DateTime.Now.AddDays(-13)
                 },
@@ -207,7 +207,7 @@ namespace Movies_WebApi.Data.Configuration
                     Duration = 157,
                     Rating = 0, //7.3
                     ReleaseDate = DateTime.ParseExact("15-11-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                    ImageUrl = "../../Photos/TheHungerGames-TheBalladOfSongbirds&Snakes.jpeg",
+                    ImageUrl = "/images/db-images/TheHungerGames-TheBalladOfSongbirds&Snakes.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
                     CreatedOn = DateTime.Now.AddDays(-14)
                 }
