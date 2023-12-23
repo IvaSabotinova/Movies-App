@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px 15px 90px 15px;
+  background-color: #e2f6fb;
+}
+
+.movie-wrapper {
+  position: relative;
+  margin-top: 25px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #e2f6fb, #222831);
+  height: 510px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.image {
+  border-top: 20px;
+  height: 436px; 
+  width: 291px;
+  object-fit: cover;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  max-width: 291px; 
+  height: 86px;  
+  background-color: #b3d5f5;
+  padding-top: 7px;
+}
+
+.movie-wrapper:hover .movie-info {
+  background: #302f2f;
+}
+
+.movie-info h3 {
+  font-family: "Anton", sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #8c4c27;
+  font-size: 18px; 
+}
+
+.movie-info p {
+  font-family: "Anton", sans-serif;
+  font-weight: bolder;
+  color: #bf8756;
+}
+
+
+/* @media screen and (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+} */
