@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MoviesWebApi.Common;
@@ -47,7 +48,15 @@ namespace MoviesWebApi.Services
 
         public async Task<Movie> GetMovieById(string movieId)
           => await this.moviesRepo.All().FirstOrDefaultAsync(x => x.Id == movieId);
-      
+
+        public async Task<MovieDetailsDto> GetMovieDetails(string movieId)
+        => await this.moviesRepo.AllAsNoTracking()
+                .Where(x => x.Id == movieId)
+                .Include(x => x.ApplicationUser)
+                .Include(x => x.Genre)
+                .ProjectTo<MovieDetailsDto>(this.mapper.ConfigurationProvider)
+                .FirstAsync();
+
         public async Task<Movie> UpdateMovie(string movieId, MovieDto movieDto)
         {
             Movie movieToEdit = await this.GetMovieById(movieId)
@@ -59,7 +68,7 @@ namespace MoviesWebApi.Services
             movieToEdit.Duration = movieDto.Duration;
             movieToEdit.ReleaseDate = movieDto.ReleaseDate;
             movieToEdit.ImageUrl = movieDto.ImageUrl;
-            
+
             this.moviesRepo.Update(movieToEdit);
             await this.moviesRepo.SaveChangesAsync();
             return movieToEdit;
@@ -67,18 +76,19 @@ namespace MoviesWebApi.Services
 
         public async Task DeleteMovie(string movieId)
         {
-            Movie movieToDelete = await this.GetMovieById(movieId) 
+            Movie movieToDelete = await this.GetMovieById(movieId)
                 ?? throw new NullReferenceException(MovieDoesNotExist);
 
             this.moviesRepo.Delete(movieToDelete);
             await this.moviesRepo.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Movie>> GetAll()
+        public async Task<IEnumerable<MovieInListDto>> GetAll()
         {
-            return await this.moviesRepo.AllAsNoTracking().ToListAsync();
-
+            return await this.moviesRepo.AllAsNoTracking()
+                .ProjectTo<MovieInListDto>(this.mapper.ConfigurationProvider)
+                .ToListAsync();
         }
-       
+
     }
 }

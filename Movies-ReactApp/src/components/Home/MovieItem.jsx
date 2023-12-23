@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 import Paths from '../../constants/Paths';
-import { pathToUrl } from '../../utils/PathsUtil';
+import { pathToUrl } from '../../utils/pathsUtil';
 
 export default function MovieItem({
     id,

@@ -70,8 +70,8 @@ namespace MoviesWebApi.Controllers
                 this.apiResponse.IsSuccess = false;
                 return this.BadRequest(this.apiResponse);
             }
-            Movie movie = await this.movieService.GetMovieById(id);
-            if (movie == null)
+            MovieDetailsDto movieDto = await this.movieService.GetMovieDetails(id);
+            if (movieDto == null)
             {
                 this.apiResponse.HttpStatusCode = HttpStatusCode.NotFound;
                 this.apiResponse.IsSuccess = false;
@@ -79,7 +79,7 @@ namespace MoviesWebApi.Controllers
                 return this.NotFound(this.apiResponse);
             }
             this.apiResponse.HttpStatusCode = HttpStatusCode.OK;
-            this.apiResponse.Result = movie;
+            this.apiResponse.Result = movieDto;
             return this.Ok(this.apiResponse);
         }
 

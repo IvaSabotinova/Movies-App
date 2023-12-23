@@ -12,11 +12,13 @@ namespace MoviesWebApi.Services
 
         Task<Movie> GetMovieById(string movieId);
 
+        Task<MovieDetailsDto> GetMovieDetails(string movieId);
+
         Task<Movie> UpdateMovie(string movieId, MovieDto movieDto);
 
         Task DeleteMovie(string movieId);
 
-        Task<IEnumerable<Movie>> GetAll();
+        Task<IEnumerable<MovieInListDto>> GetAll();
 
 
     }

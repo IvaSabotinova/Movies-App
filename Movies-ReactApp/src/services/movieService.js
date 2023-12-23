@@ -8,3 +8,12 @@ export const getAllMovies = async () => {
     }
     return result;
 }
+
+export const getMovieDetails = async (movieId) => {
+    const response = await fetch(`${BaseUrl}/movies/${movieId}`);
+    const result = response.json();
+    if (!response.ok) {
+        throw result;
+    }
+    return result;
+}
