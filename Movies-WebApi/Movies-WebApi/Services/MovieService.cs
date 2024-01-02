@@ -86,6 +86,7 @@ namespace MoviesWebApi.Services
         public async Task<IEnumerable<MovieInListDto>> GetAll()
         {
             return await this.moviesRepo.AllAsNoTracking()
+                .OrderByDescending(x => x.CreatedOn)
                 .ProjectTo<MovieInListDto>(this.mapper.ConfigurationProvider)
                 .ToListAsync();
         }

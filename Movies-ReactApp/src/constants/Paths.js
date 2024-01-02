@@ -1,9 +1,13 @@
 
-export const BaseUrl = "https://localhost:7224/api";
+//export const BaseUrl = "https://localhost:7224/api";
+export const BaseUrl = "https://localhost:5000/api";
 
 const Paths = {
     Home: '/',
-    MovieDetails: '/movies/details/:movieId'
+    MovieDetails: '/movies/details/:movieId',
+    Register: '/register',
+    Login: '/login',
+    Logout: '/logout'
 }
 
 export default Paths;

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     gap: 150px;
-    margin: 30px 50px 20px 50px;
+    margin: 85px 50px 49px 50px;
 }
 
 .movie-image,
@@ -54,4 +54,13 @@
     background-color:black;
     color: white;
     transform: scale(1.03);
+}
+
+.rating-stars{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.span-star {
+    margin-right: 5px;
 }

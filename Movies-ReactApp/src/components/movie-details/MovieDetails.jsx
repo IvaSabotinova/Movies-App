@@ -25,8 +25,21 @@ export default function MovieDetails() {
             </div>
             <div className="movie-allInfo">
                 <h2>{movie.title}</h2>
+                <div className="rating-stars">
+                    <span className="bolded">Rate the movie: </span>
+                    <span className="span-star"><i class="bi bi-star"></i></span>
+                    <span className="span-star"><i class="bi bi-star"></i></span>
+                    <span className="span-star"><i class="bi bi-star"></i></span>
+                    <span className="span-star"><i class="bi bi-star"></i></span>
+                    <span className="span-star"><i class="bi bi-star"></i></span>
+                </div>
                 <div className="rating-duration">
-                    <span><span className="bolded">Rating:</span> {movie.rating}</span>
+                    <div>                    
+                        <span className="span-star"><i class="bi bi-star"></i></span>
+                        <span>{movie.rating} IMDb rating</span>
+                    </div>
+                    {/* <span><span className="bolded">Rating:</span> {movie.rating}</span> */}
+
                     <p><span className="bolded">Duration:</span> {movie.duration} minutes</p>
 
                 </div>
@@ -39,7 +52,7 @@ export default function MovieDetails() {
                 </div>
                 <div className="button-div">
                     <span><span className="bolded">Release date:</span> {formatDate(movie.releaseDate)}</span>
-                    <button onClick={()=>{navigate(-1)}}>Back</button>
+                    <button onClick={() => { navigate(-1) }}>Back</button>
                 </div>
             </div>
 

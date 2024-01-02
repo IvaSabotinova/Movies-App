@@ -1,7 +1,21 @@
-.header{
+.header {
     background-color: rgb(11, 170, 219);
 }
 
-.text-white{
+.text-white {
     color: white;
+}
+
+.search-button {
+    border-radius: 10px;
+    border: none;
+    background-color: #e2f6fb;
+    padding: 0px 15px;
+    color: rgb(11, 170, 219);
+}
+
+.search-button:hover {
+    border: 2px solid rgb(46, 136, 239);
+    background-color: rgb(11, 170, 219);
+    color: #e2f6fb;
 }
