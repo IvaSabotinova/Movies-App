@@ -33,3 +33,9 @@
 .not-have-account{
   margin-top: 20px;
 }
+
+.errorMessage{
+  color: red;
+  font-size: 0.8em;
+  margin: 0 0 10px;
+}

@@ -18,15 +18,18 @@ namespace MoviesWebApi.Controllers
     {
         private readonly string secretKey;
         private readonly ApiResponse apiResponse;
-        private readonly UserManager<ApplicationUser> userManager;   
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
 
         public AuthController(
             IConfiguration configuration,
-            UserManager<ApplicationUser> userManager)
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager)
         {
             this.secretKey = configuration.GetValue<string>("JWT:Secret");
             this.apiResponse = new ApiResponse();
-            this.userManager = userManager;         
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
 
         [HttpPost("register")]
@@ -126,6 +129,14 @@ namespace MoviesWebApi.Controllers
                 return this.BadRequest(this.apiResponse);
             }
 
+        }
+
+        [HttpGet("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await this.signInManager.SignOutAsync();
+            this.apiResponse.HttpStatusCode = HttpStatusCode.OK;
+            return this.Ok(this.apiResponse);
         }
     }
 }
