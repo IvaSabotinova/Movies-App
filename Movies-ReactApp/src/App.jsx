@@ -1,7 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 
 import Paths from './constants/Paths';
-import { AuthProvider } from './context/AuthContext'
+import { AuthProvider } from './context/AuthContext';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Header from './components/header/Header';
 import Home from './components/home/Home';
@@ -24,6 +27,7 @@ function App() {
           <Route path={Paths.Login} element={<Login />} />
           <Route path={Paths.Logout} element={<Logout />} />
         </Routes>
+        <ToastContainer/>
         <Footer />
       </AuthProvider>
     </>

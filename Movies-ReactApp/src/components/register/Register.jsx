@@ -5,6 +5,7 @@ import './Register.css';
 
 import Paths from '../../constants/Paths';
 import AuthContext from '../../context/AuthContext';
+import Loader from '../loader/Loader';
 
 const RegisterFormKeys = {
   Username: 'username',
@@ -30,6 +31,8 @@ const Register = (
     [RegisterFormKeys.Password]: '',
     [RegisterFormKeys.ConfirmPassword]: '',
   })
+
+  const [isLoading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -83,6 +86,7 @@ const Register = (
 
   const registerHandler = async (e) => {
     e.preventDefault();
+    setLoading(true)
     validateUsername();
     validateEmail();
     validatePassword();
@@ -96,19 +100,20 @@ const Register = (
 
       return;
     }
-    try {
-      registerSubmitHandler(formValues)
+    try {     
+      registerSubmitHandler(formValues);
       navigate(Paths.Home)
     } catch (err) {
       console.log(err)
     }
 
-
+    setLoading(false);
   }
 
   return (
     <div className="register-div">
       <h2>Register</h2>
+      {isLoading && <Loader />}
       <form className="register-form" onSubmit={registerHandler}>
         <label htmlFor="username">Username:</label>
         <input
@@ -157,7 +162,7 @@ const Register = (
 
         {errors[RegisterFormKeys.ConfirmPassword] && (<p className="errorMessage">{errors[RegisterFormKeys.ConfirmPassword]}</p>)}
 
-        <input type="submit" className="register" value="Register" />
+        <input type="submit" className="register" value="Register" disabled={isLoading}/>
       </form>
       <div className="have-account">
         <p>Already have an account? <Link className='link-to-login' to={Paths.Login}>Login</Link></p>

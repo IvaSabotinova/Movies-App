@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import useLocalStorage from '../hooks/useLocalStorage';
 import * as authService from '../services/authService';
 import Paths from '../constants/Paths';
+import ToastNotify from '../toast/ToastNotify';
 
 
 const AuthContext = createContext();
@@ -16,24 +17,33 @@ export const AuthProvider = ({
     const [auth, setAuth] = useLocalStorage('auth', {});
     const navigate = useNavigate();
 
-    const registerSubmitHandler = async (data) => {        
-        const result = await authService.Register(data.username, data.email, data.password, data.confirmPassword);       
-        navigate(Paths.Home);
+    const registerSubmitHandler = async (data) => {          
+        try {
+            const result = await authService.Register(data.username, data.email, data.password, data.confirmPassword);  
+            ToastNotify('User registered successfully!', 'success');
+            navigate(Paths.Login);
+        } catch (err) {
+            console.log("Registration failed", err);
+            ToastNotify(err.errorMessages[1], 'error');
+        }    
+       
     }
 
     const loginSubmitHandler = async (data) => {
         try {
             const result = await authService.Login(data.username, data.password);
-            setAuth(result.result);
+            setAuth(result.result);        
+            ToastNotify("User logged in successfully!", "success")            
             navigate(Paths.Home)
         } catch (err) {
-            console.log("Login failed:", err);     
+            console.log("Login failed:", err); 
+            ToastNotify(err.errorMessages[0], "error")     
             navigate(Paths.Register)   
         }
     }
 
     const logOutHandler = ()=>{
-        setAuth({});
+        setAuth({});       
         navigate(Paths.Home)
     }
 

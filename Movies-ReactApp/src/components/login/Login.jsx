@@ -58,18 +58,16 @@ const Login = () => {
             return;
         }
         try {
-           loginSubmitHandler(formValues);
+            loginSubmitHandler(formValues);
             navigate(Paths.Home)
         } catch (err) {
             console.log(err)
         }
-
     }
 
     return (
         <div className="login-div">
             <h2>Login</h2>
-
             <form className="login-form" onSubmit={loginHandler}>
                 <label htmlFor="username">Username:</label>
                 <input
