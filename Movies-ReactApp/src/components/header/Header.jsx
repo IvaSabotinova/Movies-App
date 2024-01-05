@@ -25,6 +25,7 @@ export default function Header() {
           >
             <Image src={popcornSodaImage} alt="popcornSodaImage" style={{ maxHeight: '35px' }} roundedCircle />
             <Nav.Link as={NavLink} to={Paths.Home} className="text-white" >Home</Nav.Link>    
+            {isAuthenticated &&  <Nav.Link as={NavLink} to={Paths.CreateMovie} className="text-white" >Add Movie</Nav.Link>  }             
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="">Action</NavDropdown.Item>
               <NavDropdown.Item href="">

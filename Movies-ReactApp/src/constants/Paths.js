@@ -7,7 +7,9 @@ const Paths = {
     MovieDetails: '/movies/details/:movieId',
     Register: '/register',
     Login: '/login',
-    Logout: '/logout'
+    Logout: '/logout',
+    CreateMovie: '/create-movie',
+    NotFound: '*'
 }
 
 export default Paths;

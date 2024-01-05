@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MoviesWebApi.Common;
 using MoviesWebApi.Data;
@@ -11,29 +10,15 @@ namespace MoviesWebApi.Services
 {
     public class MovieService : IMovieService
     {
-        private readonly IRepository<Movie> moviesRepo;
-        private readonly IRepository<Genre> genresRepo;
+        private readonly IRepository<Movie> moviesRepo;        
         private readonly IMapper mapper;
 
         public MovieService(
-            IRepository<Movie> moviesRepo,
-            IRepository<Genre> genresRepo,
+            IRepository<Movie> moviesRepo,           
             IMapper mapper)
         {
-            this.moviesRepo = moviesRepo;
-            this.genresRepo = genresRepo;
+            this.moviesRepo = moviesRepo;            
             this.mapper = mapper;
-        }
-
-        public async Task<IEnumerable<SelectListItem>> GetAllGenres()
-        {
-            return await this.genresRepo.AllAsNoTracking()
-                .Select(x => new SelectListItem
-                {
-                    Value = x.Id,
-                    Text = x.Name,
-                })
-                .ToListAsync();
         }
 
         public async Task<Movie> CreateMovie(MovieDto movieDto, string userId)
