@@ -17,7 +17,7 @@ export default function MovieDetails() {
         movieService.getMovieDetails(movieId)
             .then((res) => setMovie(res.result))
     }, [movieId]);
-
+    
     return (
         <div className="movie-details">
             <div className="movie-image">

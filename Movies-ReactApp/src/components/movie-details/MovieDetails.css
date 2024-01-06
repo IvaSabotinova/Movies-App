@@ -5,8 +5,7 @@
     margin: 85px 50px 49px 50px;
 }
 
-.movie-image,
-.movie-allInfo {
+.movie-image{
     max-width: 45%;
 }
 
@@ -15,11 +14,14 @@
     flex-direction: column;
     justify-content: space-around;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 45%;
 }
 
 .movie-image img {
     border-radius: 0.8rem;
     box-shadow: 0.5em 1em 1em #404046;
+    height: 513px;
+    width: 342px;
 }
 
 .movie-allInfo h2 {
@@ -51,12 +53,12 @@
 }
 
 .button-div button:hover {
-    background-color:black;
+    background-color: black;
     color: white;
     transform: scale(1.03);
 }
 
-.rating-stars{
+.rating-stars {
     text-align: center;
     margin-bottom: 15px;
 }

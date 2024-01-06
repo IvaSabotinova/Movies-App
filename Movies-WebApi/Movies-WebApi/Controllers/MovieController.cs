@@ -25,7 +25,7 @@ namespace MoviesWebApi.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<ApiResponse>> CreateMovie([FromForm] MovieDto movieCreateDto)
+        public async Task<ActionResult<ApiResponse>> CreateMovie(MovieDto movieCreateDto)
         {      
                       
             try
@@ -44,6 +44,7 @@ namespace MoviesWebApi.Controllers
                     this.apiResponse.HttpStatusCode = HttpStatusCode.Created;
                     this.apiResponse.Result = newMovie;
                     return this.CreatedAtRoute("GetMovie", new { id = newMovie.Id }, this.apiResponse);
+                 
                 }
                 else
                 {
