@@ -69,3 +69,26 @@ export const updateMovie = async (movieId, movieData) =>{
 
     return result;
 }
+
+export const deleteMovie = async (movieId) =>{
+    const httpHeaders = {
+        method: 'DELETE'
+    }
+
+    const token = JSON.parse(localStorage.getItem("auth"))?.token;
+    if (token) {
+        httpHeaders.headers = {
+            ...httpHeaders.headers,
+            "Authorization": `Bearer ${token}`
+        }
+    }
+
+    const response = await fetch(`${BaseUrl}/movies/${movieId}`, httpHeaders);
+    const result = await response.json();   
+    if (!response.ok) {
+        throw result;
+    }
+
+    return result;
+
+}

@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 
 import Paths from './constants/Paths';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
+import { MovieProvider } from './contexts/MovieContext';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,19 +22,21 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <Header />
-        <Routes>
-          <Route path={Paths.Home} element={<Home />} />
-          <Route path={Paths.MovieDetails} element={<MovieDetails />} />
-          <Route path={Paths.Register} element={<Register />} />
-          <Route path={Paths.Login} element={<Login />} />
-          <Route path={Paths.Logout} element={<Logout />} />
-          <Route path={Paths.CreateMovie} element={<MovieCreateUpdate />} />
-          <Route path={Paths.UpdateMovie} element={<MovieCreateUpdate />} />
-          <Route path={Paths.NotFound} element={<NotFound/> } />
-        </Routes>
-        <ToastContainer />
-        <Footer />
+        <MovieProvider>
+          <Header />
+          <Routes>
+            <Route path={Paths.Home} element={<Home />} />
+            <Route path={Paths.MovieDetails} element={<MovieDetails />} />
+            <Route path={Paths.Register} element={<Register />} />
+            <Route path={Paths.Login} element={<Login />} />
+            <Route path={Paths.Logout} element={<Logout />} />
+            <Route path={Paths.CreateMovie} element={<MovieCreateUpdate />} />
+            <Route path={Paths.UpdateMovie} element={<MovieCreateUpdate />} />
+            <Route path={Paths.NotFound} element={<NotFound />} />
+          </Routes>
+          <ToastContainer />
+          <Footer />
+        </MovieProvider>
       </AuthProvider>
     </>
   )

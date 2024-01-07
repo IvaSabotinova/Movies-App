@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 
 import Paths from '../../constants/Paths';
-import AuthContext from '../../context/AuthContext';
+import AuthContext from '../../contexts/AuthContext';
 import Loader from '../loader/Loader';
 
 const RegisterFormKeys = {

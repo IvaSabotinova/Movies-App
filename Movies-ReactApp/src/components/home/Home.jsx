@@ -1,27 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 
 import './Home.css';
 
-import * as movieService from '../../services/movieService';
+import MovieContext from '../../contexts/MovieContext';
 
 import MovieItem from './MovieItem';
 import Loader from '../loader/Loader';
 
 export default function Home() {
-    const [movies, setMovies] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        movieService.getAllMovies()
-            .then((res) => {
-                setIsLoading(false);
-                setMovies(res.result)
-            });
-    }, [])
+    const { movies, isLoading } = useContext(MovieContext);
 
     return (
         <>
             <div className="wrapper">
-                {isLoading && <Loader/>}
+                {isLoading && <Loader />}
                 {!isLoading && movies.map(movie => (<MovieItem
                     key={movie.id}
                     {...movie} />))}

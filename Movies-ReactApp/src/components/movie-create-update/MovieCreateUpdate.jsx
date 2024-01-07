@@ -1,13 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import * as genreService from '../../services/genreService';
 import * as movieService from '../../services/movieService';
-import Paths from '../../constants/Paths';
-import { pathToUrl } from '../../utils/pathsUtil';
 import { formatInputDate } from '../../utils/dateUtil';
 import ToastNotify from '../../toast/ToastNotify';
-
+import MovieContext from '../../contexts/MovieContext';
 
 const movieEmptyState = {
   title: '',
@@ -20,6 +18,7 @@ const movieEmptyState = {
 export default function MovieCreateUpdate() {
   const [genres, setGenres] = useState([]);
   const [movie, setMovie] = useState(movieEmptyState);
+  const {createMovieHandler, updateMovieHandler} = useContext(MovieContext)
   const [imageToDisplay, setImageToDisplay] = useState("");
   const { movieId } = useParams();
   const navigate = useNavigate();
@@ -87,16 +86,10 @@ export default function MovieCreateUpdate() {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (movieId) {
-      const editedMovie = await movieService.updateMovie(movieId, movie);
-      console.log(editedMovie);
-      ToastNotify("Movie updated successfully!", "success");
-      navigate(pathToUrl(Paths.MovieDetails, { movieId }))
+      updateMovieHandler(movieId, movie);     
     }
     else {
-      const newMovie = await movieService.createMovie(movie);
-      console.log(newMovie);
-      ToastNotify("Movie created successfully!", "success");
-      navigate(pathToUrl(Paths.MovieDetails, { movieId: newMovie.result.id }))
+      createMovieHandler(movie);    
     }
 
   }
@@ -169,16 +162,8 @@ export default function MovieCreateUpdate() {
               className="form-control mt-1"
               // value={movie.imageUrl}
               onChange={changeFileHandler}
-
             />
-            {/* <input
-              id="imageUrl"
-              name="imageUrl"
-              type="text"
-              className="form-control mt-1"
-              value={movie.imageUrl}
-              onChange={changeHandler}
-            /> */}
+          
             <div className="row">
               <div className="col-6">
                 <button type="submit" className="btn btn-info mt-2 form-control">

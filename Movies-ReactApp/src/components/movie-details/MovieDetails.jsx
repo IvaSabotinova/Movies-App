@@ -1,26 +1,47 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
+import './MovieDetails.css';
 
 import * as movieService from '../../services/movieService';
 import { formatDetailsDate } from '../../utils/dateUtil';
 import { pathToUrl } from '../../utils/pathsUtil';
-import AuthContext from '../../context/AuthContext';
+import AuthContext from '../../contexts/AuthContext';
+import MovieContext from '../../contexts/MovieContext';
 import Paths from '../../constants/Paths';
-
-import './MovieDetails.css';
 
 
 export default function MovieDetails() {
     const [movie, setMovie] = useState({});
     const { movieId } = useParams();
-    const { username } = useContext(AuthContext)
+    const { username } = useContext(AuthContext);
+    const { deleteMovieHandler } = useContext(MovieContext)
     const navigate = useNavigate();
 
     useEffect(() => {
         movieService.getMovieDetails(movieId)
             .then((res) => setMovie(res.result))
     }, [movieId]);
+
+    const deleteMovie = (e) => {
+        const hasConfirmed = confirm(`Are you sure you want to delete movie ${movie.title}?`);
+        if (hasConfirmed) {
+            toast.promise(
+                deleteMovieHandler(movieId),
+                {
+                    pending: 'Processing your request...',
+                    success: 'Movie deleted successfully! 👌',
+                    error: 'Error encountered 🤯'
+                },
+                {
+                    theme: "dark",
+                }
+            )
+
+            navigate(Paths.Home)
+        }
+    }
 
     return (
         <div className="movie-details">
@@ -63,10 +84,7 @@ export default function MovieDetails() {
                         <button className="btn btn-info" onClick={() => navigate(pathToUrl(Paths.UpdateMovie, { movieId }))}>
                             <i className="bi bi-pencil-fill"></i> Edit
                         </button>
-                        <button
-                            className="btn btn-danger mx-2"
-                        // onClick={() => handleMenuItemDelete(menuItem.id)}
-                        >
+                        <button className="btn btn-danger mx-2" onClick={deleteMovie}>
                             <i className="bi bi-trash-fill"></i> Delete
                         </button>
                     </div>}

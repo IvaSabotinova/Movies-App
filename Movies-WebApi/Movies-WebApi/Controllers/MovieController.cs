@@ -14,19 +14,19 @@ namespace MoviesWebApi.Controllers
     [ApiController]
     public class MovieController : ControllerBase
     {
-        private readonly IMovieService movieService;      
+        private readonly IMovieService movieService;
         private readonly ApiResponse apiResponse;
 
         public MovieController(IMovieService movieService)
         {
-            this.movieService = movieService;        
+            this.movieService = movieService;
             this.apiResponse = new ApiResponse();
         }
 
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<ApiResponse>> CreateMovie(MovieDto movieCreateDto)
-        {                            
+        {
             try
             {
                 if (ModelState.IsValid)
@@ -43,7 +43,7 @@ namespace MoviesWebApi.Controllers
                     this.apiResponse.HttpStatusCode = HttpStatusCode.Created;
                     this.apiResponse.Result = newMovie;
                     return this.CreatedAtRoute("GetMovie", new { id = newMovie.Id }, this.apiResponse);
-                 
+
                 }
                 else
                 {
@@ -54,7 +54,7 @@ namespace MoviesWebApi.Controllers
             catch (Exception ex)
             {
                 this.apiResponse.IsSuccess = false;
-               // this.apiResponse.ErrorMessages = new List<string> { ex.ToString() };
+                // this.apiResponse.ErrorMessages = new List<string> { ex.ToString() };
                 this.apiResponse.ErrorMessages = new List<string> { ex.Message };
             }
             return this.apiResponse;
@@ -90,7 +90,7 @@ namespace MoviesWebApi.Controllers
             try
             {
                 if (ModelState.IsValid)
-                {                   
+                {
                     Movie editedMovie = await this.movieService.UpdateMovie(id, movieDto);
                     this.apiResponse.HttpStatusCode = HttpStatusCode.OK;
                     this.apiResponse.Result = editedMovie;
@@ -121,7 +121,7 @@ namespace MoviesWebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-
+        [Authorize]
         public async Task<ActionResult<ApiResponse>> DeleteMovie(string id)
         {
             try

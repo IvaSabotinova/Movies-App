@@ -5,7 +5,7 @@ import { Button, Container, Form, Nav, Navbar, NavDropdown, Image } from 'react-
 import './Header.css';
 
 import Paths from '../../constants/Paths';
-import AuthContext from '../../context/AuthContext';
+import AuthContext from '../../contexts/AuthContext';
 
 import popcornSodaImage from '/images/images-general/popcorn-soda.png';
 
