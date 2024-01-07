@@ -7,8 +7,7 @@ export const createMovie = async (data) => {
         headers: {
             'content-type': 'application/json',
         },
-       body: JSON.stringify(data)
-      
+        body: JSON.stringify(data)
     }
 
     const token = JSON.parse(localStorage.getItem("auth"))?.token;
@@ -18,13 +17,13 @@ export const createMovie = async (data) => {
             "Authorization": `Bearer ${token}`
         }
     }
-    
-    const response = await fetch(`${BaseUrl}/Movies`, httpHeaders);
-    const result = await response.json();    
+
+    const response = await fetch(`${BaseUrl}/movies`, httpHeaders);
+    const result = await response.json();
     if (!response.ok) {
         throw result;
     }
-    
+
     return result;
 }
 
@@ -43,5 +42,30 @@ export const getMovieDetails = async (movieId) => {
     if (!response.ok) {
         throw result;
     }
+    return result;
+}
+
+export const updateMovie = async (movieId, movieData) =>{
+    const httpHeaders = {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(movieData)
+    }
+
+    const token = JSON.parse(localStorage.getItem("auth"))?.token;
+    if (token) {
+        httpHeaders.headers = {
+            ...httpHeaders.headers,
+            "Authorization": `Bearer ${token}`
+        }
+    }
+    const response = await fetch(`${BaseUrl}/movies/${movieId}`, httpHeaders);
+    const result = await response.json();
+    if (!response.ok) {
+        throw result;
+    }
+
     return result;
 }

@@ -26,8 +26,7 @@ namespace MoviesWebApi.Controllers
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<ApiResponse>> CreateMovie(MovieDto movieCreateDto)
-        {      
-                      
+        {                            
             try
             {
                 if (ModelState.IsValid)
@@ -85,7 +84,8 @@ namespace MoviesWebApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<ApiResponse>> UpdateMovie(string id, [FromForm] MovieDto movieDto)
+        [Authorize]
+        public async Task<ActionResult<ApiResponse>> UpdateMovie(string id, MovieDto movieDto)
         {
             try
             {

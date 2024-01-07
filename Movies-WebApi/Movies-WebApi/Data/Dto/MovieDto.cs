@@ -25,7 +25,7 @@ namespace MoviesWebApi.Data.Dto
         public DateTime ReleaseDate { get; set; }
 
          [Required]
-         [RegularExpression(ImageUrlRegex)]
+         //[RegularExpression(ImageUrlRegex)]
          public string ImageUrl { get; set; } = null!;
 
     }

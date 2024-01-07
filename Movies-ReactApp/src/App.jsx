@@ -14,7 +14,7 @@ import Register from './components/register/Register';
 import Login from './components/login/Login';
 import Logout from './components/logout/Logout';
 import NotFound from './components/not-found/NotFound';
-import MovieCreate from './components/movie-create/MovieCreate';
+import MovieCreateUpdate from './components/movie-create-update/MovieCreateUpdate';
 
 
 function App() {
@@ -28,7 +28,8 @@ function App() {
           <Route path={Paths.Register} element={<Register />} />
           <Route path={Paths.Login} element={<Login />} />
           <Route path={Paths.Logout} element={<Logout />} />
-          <Route path={Paths.CreateMovie} element={<MovieCreate />} />
+          <Route path={Paths.CreateMovie} element={<MovieCreateUpdate />} />
+          <Route path={Paths.UpdateMovie} element={<MovieCreateUpdate />} />
           <Route path={Paths.NotFound} element={<NotFound/> } />
         </Routes>
         <ToastContainer />
