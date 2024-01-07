@@ -15,10 +15,20 @@ const movieEmptyState = {
   releaseDate: '',
   imageUrl: ''
 }
+
+const errorsEmptyState = {
+  title: '',
+  genreId: '',
+  description: '',
+  duration: '',
+  releaseDate: '',
+  imageUrl: ''
+}
 export default function MovieCreateUpdate() {
   const [genres, setGenres] = useState([]);
   const [movie, setMovie] = useState(movieEmptyState);
-  const {createMovieHandler, updateMovieHandler} = useContext(MovieContext)
+  const [errors, setErrors] = useState(errorsEmptyState);
+  const { createMovieHandler, updateMovieHandler } = useContext(MovieContext)
   const [imageToDisplay, setImageToDisplay] = useState("");
   const { movieId } = useParams();
   const navigate = useNavigate();
@@ -42,11 +52,52 @@ export default function MovieCreateUpdate() {
           });
           setImageToDisplay(res.result.imageUrl)
         })
-    }else {
+    } else {
       setMovie(movieEmptyState);
       setImageToDisplay("");
     }
-  }, [movieId, genres])
+  }, [movieId, genres]);
+
+  const validateTitle = () => {
+    if (movie.title.length < 2 || movie.title.length > 260) {
+      setErrors(state => ({ ...state, title: 'Title must be between 2 and 260 characters!' }))
+    }
+    else {
+      setErrors(state => ({ ...state, title: '' }))
+    }
+  }
+
+  const validateGenreId = () => {
+    if (!movie.genreId) {
+      setErrors(state => ({ ...state, genreId: 'Please choose a genre!' }))
+    } else {
+      setErrors(state => ({ ...state, genreId: '' }));
+    }
+  }
+
+  const validateDescription = () => {
+    if (movie.description.length < 10 || movie.description.length > 1000) {
+      setErrors(state => ({ ...state, description: 'Description must be between 10 and 1000 characters!' }))
+    } else {
+      setErrors(state => ({ ...state, description: '' }))
+    }
+  }
+
+  const validateDuration = () => {
+    if (movie.duration < 1 || movie.duration > 2147483647) {
+      setErrors(state => ({ ...state, duration: 'Duration must be no less than 1 minute!' }))
+    } else {
+      setErrors(state => ({ ...state, duration: '' }))
+    }
+  }
+
+  const validateReleaseDate = () => {
+    if (!movie.releaseDate) {
+      setErrors(state => ({ ...state, releaseDate: 'Please choose a date!' }));
+    } else {
+      setErrors(state => ({ ...state, releaseDate: '' }));
+    }
+  }
 
   const changeHandler = (e) => {
     let value = '';
@@ -85,11 +136,26 @@ export default function MovieCreateUpdate() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    validateTitle();
+    validateGenreId();
+    validateDescription();
+    validateDuration();
+    validateReleaseDate();
+
+    if (errors.title != ''
+      || errors.genreId != ''
+      || errors.description != ''
+      || errors.duration != ''
+      || errors.releaseDate != ''
+      || Object.values(movie).some(x => x === '')) {
+
+      return;
+    }
     if (movieId) {
-      updateMovieHandler(movieId, movie);     
+      updateMovieHandler(movieId, movie);
     }
     else {
-      createMovieHandler(movie);    
+      createMovieHandler(movie);
     }
 
   }
@@ -110,7 +176,9 @@ export default function MovieCreateUpdate() {
               required
               value={movie.title}
               onChange={changeHandler}
+              onBlur={validateTitle}
             />
+            {errors.title && (<p className="errorMessage">{errors.title}</p>)}
             <label className="mt-2" htmlFor="genreId">Genre</label>
             <select className="form-control mt-1"
               id="genreId"
@@ -118,13 +186,14 @@ export default function MovieCreateUpdate() {
               required
               value={movie.genreId}
               onChange={changeHandler}
-            //  onBlur={validateType}
+              onBlur={validateGenreId}
             >
               <option value="" disabled="">Choose Genre</option>
               {genres.map(genre => (
                 <option key={genre.value} value={genre.value}>{genre.text}</option>
               ))}
             </select>
+            {errors.genreId && (<p className="errorMessage">{errors.genreId}</p>)}
             <label className="mt-2" htmlFor="description">Description</label>
             <textarea
               id="description"
@@ -133,7 +202,9 @@ export default function MovieCreateUpdate() {
               placeholder="Enter Description"
               value={movie.description}
               onChange={changeHandler}
+              onBlur={validateDescription}
             ></textarea>
+            {errors.description && (<p className="errorMessage">{errors.description}</p>)}
             <label className="mt-2" htmlFor="duration">Duration</label>
             <input
               id="duration"
@@ -143,7 +214,9 @@ export default function MovieCreateUpdate() {
               placeholder="Enter Duration"
               value={movie.duration}
               onChange={changeHandler}
+              onBlur={validateDuration}
             />
+            {errors.duration && (<p className="errorMessage">{errors.duration}</p>)}
             <label className="mt-2" htmlFor="releaseDate">Release Date</label>
             <input
               id="releaseDate"
@@ -153,17 +226,18 @@ export default function MovieCreateUpdate() {
               placeholder="Enter Release Date"
               value={movie.releaseDate}
               onChange={changeHandler}
+              onBlur={validateReleaseDate}
             />
+            {errors.releaseDate && (<p className="errorMessage">{errors.releaseDate}</p>)}
             <label className="mt-2" htmlFor="imageUrl">Add Image</label>
             <input
               id="imageUrl"
               name="imageUrl"
               type="file"
-              className="form-control mt-1"
-              // value={movie.imageUrl}
+              className="form-control mt-1"             
               onChange={changeFileHandler}
             />
-          
+
             <div className="row">
               <div className="col-6">
                 <button type="submit" className="btn btn-info mt-2 form-control">

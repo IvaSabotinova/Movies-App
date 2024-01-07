@@ -13,7 +13,7 @@ namespace MoviesWebApi.Data.Dto
         [Required]
         public string GenreId { get; set; } = null!;
 
-        public IEnumerable<SelectListItem> Genres { get; set; } = new List<SelectListItem>();
+       // public IEnumerable<SelectListItem> Genres { get; set; } = new List<SelectListItem>();
 
         [Required]
         [StringLength(MovieDescriptionMaxLength, MinimumLength = MovieDescriptionMinLength)]

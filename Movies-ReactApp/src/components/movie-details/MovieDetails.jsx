@@ -38,9 +38,7 @@ export default function MovieDetails() {
                     theme: "dark",
                 }
             )
-
-            navigate(Paths.Home)
-        }
+            navigate(Paths.Home);        }
     }
 
     return (
