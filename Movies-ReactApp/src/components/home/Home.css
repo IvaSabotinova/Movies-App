@@ -2,13 +2,24 @@
 
 .wrapper {
   display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  padding: 30px 15px 90px 15px;
+  background-color: #e2f6fb;  
+ }
+
+.wrapper select{
+  margin-right: 50px; 
+}
+
+.main{
+  display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 30px 15px 90px 15px;
-  margin-top: 50px;
-  background-color: #e2f6fb;
+  padding: 10px 15px 30px 15px;
+  background-color: #e2f6fb; 
 }
 
 .movie-wrapper {
@@ -27,7 +38,7 @@
 
 .image {
   border-top: 20px;
-  height: 436px; 
+  height: 436px;
   width: 291px;
   object-fit: cover;
 }
@@ -38,8 +49,8 @@
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  max-width: 291px; 
-  height: 86px;  
+  max-width: 291px;
+  height: 86px;
   background-color: #b3d5f5;
   padding-top: 7px;
 }
@@ -53,7 +64,7 @@
   font-weight: bold;
   text-transform: capitalize;
   color: #8c4c27;
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 .movie-info p {

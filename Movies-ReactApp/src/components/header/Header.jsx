@@ -58,7 +58,7 @@ export default function Header() {
           <Form className="d-flex col-3">
             <Form.Control
               type="search"
-              placeholder="Search movie"
+              placeholder="Search movie by title"
               className="me-2"
               aria-label="Search"
               value={searchValue}
@@ -70,6 +70,7 @@ export default function Header() {
             {/* <button className='search-button' onClick={handleSearchClick}>Search</button> */}
             {/* <Button variant="outline-info">Search</Button> */}
           </Form>}
+      
           <Nav>
             {!isAuthenticated &&
               <>

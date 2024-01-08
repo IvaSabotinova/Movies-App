@@ -8,6 +8,8 @@ namespace MoviesWebApi.Data.Dto
 
         public string Title { get; set; }
 
+        public string GenreId {get; set;}
+
         public string ImageUrl { get; set; }
        
         public double Rating { get; set; }

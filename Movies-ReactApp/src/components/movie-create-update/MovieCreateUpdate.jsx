@@ -234,7 +234,7 @@ export default function MovieCreateUpdate() {
               id="imageUrl"
               name="imageUrl"
               type="file"
-              className="form-control mt-1"             
+              className="form-control mt-1"
               onChange={changeFileHandler}
             />
 
