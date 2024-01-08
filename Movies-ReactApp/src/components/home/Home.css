@@ -8,7 +8,12 @@
   background-color: #e2f6fb;  
  }
 
-.wrapper select{
+ .wrapper .select{
+  display: flex;
+  justify-content: space-between;
+ }
+
+.wrapper .select-genre{
   margin-right: 50px; 
 }
 
