@@ -15,6 +15,7 @@ export const MovieProvider = ({
     children
 }) => {
     const [movies, setMovies] = useState([]);
+    const [filteredMovies, setFilteredMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
@@ -22,7 +23,8 @@ export const MovieProvider = ({
         movieService.getAllMovies()
             .then((res) => {
                 setIsLoading(false);
-                setMovies(res.result)
+                setMovies(res.result);
+                setFilteredMovies(res.result);
             });
     }
 
@@ -46,17 +48,24 @@ export const MovieProvider = ({
         navigate(pathToUrl(Paths.MovieDetails, { movieId }))
     }
 
-    const deleteMovieHandler = async (movieId)=>{
+    const deleteMovieHandler = async (movieId) => {
         await movieService.deleteMovie(movieId);
         fetchMovies();
     }
 
+    const filterMoviesBySearchTerm = (searchValue) => {       
+        const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(searchValue.toLowerCase()));
+        setFilteredMovies(filteredMovies)
+
+    }
+
     const movieContextValues = {
-        movies,
+        movies: filteredMovies,
         isLoading,
         createMovieHandler,
         updateMovieHandler,
-        deleteMovieHandler
+        deleteMovieHandler,
+        filterMoviesBySearchTerm
     }
 
     return (
@@ -64,7 +73,6 @@ export const MovieProvider = ({
             {children}
         </MovieContext.Provider>
     );
-
 }
 
 export default MovieContext;
