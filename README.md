@@ -1,11 +1,13 @@
 <p align="center">
-<img  src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/3e675d4b-dd94-4b68-bea5-9833a567a35f" alt="ReactJS" 
-width="60px">
-<img  src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/caa8bb8f-656e-4c06-a4d6-af047129e0d2" alt="WebApi" 
-width="60px">
+   <img  src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/3e675d4b-dd94-4b68-bea5-9833a567a35f" alt="ReactJS" 
+width="80px">
+      <img  src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/035b39fc-7890-4b2d-841f-d901d4706cbd" alt="And" 
+width="30px">   
+   <img  src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/caa8bb8f-656e-4c06-a4d6-af047129e0d2" alt="WebApi" 
+width="160px">
 </p>
 
-# <p align="center" style="font-size:30px;"><b>Movies App :movie_camera:</b></p>
+# <p align="center" style="font-size:30px;"><b>:movie_camera: Movies App</b></p>
 
 
 ### Short Description
@@ -83,11 +85,3 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 <p align="left">
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/e7cf9622-f232-42a0-8db8-10a85cb536b5" alt="Register" width="900px">
 </p>
-
-
-**Log-in page**
-
-<p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/6eb0a112-26f1-4b01-89ce-4a40a9d5eb0a" alt="Login" width="900px">
-</p>
-
