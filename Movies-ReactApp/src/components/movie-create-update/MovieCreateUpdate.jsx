@@ -157,7 +157,6 @@ export default function MovieCreateUpdate() {
     else {
       createMovieHandler(movie);
     }
-
   }
 
   return (

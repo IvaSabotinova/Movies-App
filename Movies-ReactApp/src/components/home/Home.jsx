@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { Form } from 'react-bootstrap';
 
 import './Home.css';
 
@@ -11,7 +12,8 @@ import Loader from '../loader/Loader';
 export default function Home() {
     const { movies, isLoading } = useContext(MovieContext);
     const [genres, setGenres] = useState([]);
-    const [selected, setSelected] = useState({
+    const [filters, setFilters] = useState({
+        searchTerm: '',
         genreId: '',
         sort: ''
     })
@@ -22,28 +24,31 @@ export default function Home() {
             .then(setGenres)
     }, []);
 
-
     const changeHandler = (e) => {
-        setSelected(state => ({ ...state, [e.target.name]: e.target.value }))
+        setFilters(state => ({ ...state, [e.target.name]: e.target.value }))
     }
 
     useEffect(() => {
         let updatedMovies = [...movies];
 
-        if (selected.genreId) {
-            updatedMovies = updatedMovies.filter(movie => movie.genreId === selected.genreId);
+        if (filters.searchTerm) {
+            updatedMovies = updatedMovies.filter(movie => movie.title.toLowerCase().includes(filters.searchTerm.toLowerCase()));
+        }
+
+        if (filters.genreId) {
+            updatedMovies = updatedMovies.filter(movie => movie.genreId === filters.genreId);
 
         }
-        if (selected.sort === 'A-Z') {
+        if (filters.sort === 'A-Z') {
             updatedMovies.sort((a, b) => a.title.localeCompare(b.title));
 
         }
-        if (selected.sort === 'Z-A') {
+        if (filters.sort === 'Z-A') {
             updatedMovies.sort((a, b) => b.title.localeCompare(a.title));
 
         }
         setFilteredSortedMovies(updatedMovies)
-    }, [selected, movies]);
+    }, [filters, movies]);
 
     return (
         <>
@@ -54,7 +59,7 @@ export default function Home() {
                         id="genreId"
                         name="genreId"
                         required
-                        value={selected.genreId}
+                        value={filters.genreId}
                         onChange={changeHandler}
                     >
                         <option value="" disabled="">Search By Genre</option>
@@ -62,10 +67,27 @@ export default function Home() {
                             <option key={genre.value} value={genre.value}>{genre.text}</option>
                         ))}
                     </select>
+
+                    <Form className="d-flex col-3 mt-2 mb-1">
+                        <Form.Control
+                            style={{ height: "37.5px" }}
+                            type="search"
+                            placeholder="Search movie by title"
+                            className="me-2"
+                            aria-label="Search"
+                            name="searchTerm"
+                            value={filters.searchTerm}
+                            onChange={changeHandler}
+                        />
+                        <span style={{ position: "relative", left: "-60px", top: "7px" }}>
+                            <i className="bi bi-search"></i>
+                        </span>                  
+                    </Form>
+
                     <select className="form-control mt-1 mb-1 form-select select-sort"
                         name="sort"
                         id="sort"
-                        value={selected.sort}
+                        value={filters.sort}
                         onChange={changeHandler}
                         style={{ width: "200px" }}
                     >
@@ -76,7 +98,8 @@ export default function Home() {
                 </div>
                 <div className="main">
                     {isLoading && <Loader />}
-                    {!isLoading && filteredSortedMovies.map(movie => (<MovieItem
+                    {!isLoading && filteredSortedMovies.length === 0 && <p className="no-movies">No movies found by these criteria!</p>}
+                    {!isLoading && filteredSortedMovies.length > 0 && filteredSortedMovies.map(movie => (<MovieItem
                         key={movie.id}
                         {...movie} />))}
                 </div>

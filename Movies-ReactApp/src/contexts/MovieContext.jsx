@@ -15,7 +15,6 @@ export const MovieProvider = ({
     children
 }) => {
     const [movies, setMovies] = useState([]);
-    const [filteredMovies, setFilteredMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();
 
@@ -23,8 +22,7 @@ export const MovieProvider = ({
         movieService.getAllMovies()
             .then((res) => {
                 setIsLoading(false);
-                setMovies(res.result);
-                setFilteredMovies(res.result);
+                setMovies(res.result);        
             });
     }
 
@@ -53,19 +51,12 @@ export const MovieProvider = ({
         fetchMovies();
     }
 
-    const filterMoviesBySearchTerm = (searchValue) => {       
-        const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(searchValue.toLowerCase()));
-        setFilteredMovies(filteredMovies)
-
-    }
-
     const movieContextValues = {
-        movies: filteredMovies,
+        movies,
         isLoading,
         createMovieHandler,
         updateMovieHandler,
         deleteMovieHandler,
-        filterMoviesBySearchTerm
     }
 
     return (
