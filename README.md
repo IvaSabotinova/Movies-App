@@ -12,6 +12,13 @@ width="160px">
 
 ### Short Description
 
+The app has a **public part** available without authentication. It reveals all movies, their details as well as enables searches by whole or part of movies' titles, searches per genre and sorting by name A-Z and Z-A.
+
+There are two basic roles - **admin** and **user**.
+
+After successful log-in, a **user** can add new movie. He can also edit / delete the movies added by him.
+
+The **admin** can edit / delete other users' records. He can also add / edit / delete movies.
 
 ### Built With
 
@@ -84,4 +91,10 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 
 <p align="left">
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/e7cf9622-f232-42a0-8db8-10a85cb536b5" alt="Register" width="900px">
+</p>
+
+**Log-in page**
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/6eb0a112-26f1-4b01-89ce-4a40a9d5eb0a" alt="Login" width="900px">
 </p>
