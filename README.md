@@ -1,5 +1,8 @@
 <p align="center">
-<img  src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/7b20861c-55e5-4a6c-ae75-406f42241c49" alt=".NetApi/ReactJS" width="60px">
+<img  src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/3e675d4b-dd94-4b68-bea5-9833a567a35f" alt="ReactJS" 
+width="60px">
+<img  src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/caa8bb8f-656e-4c06-a4d6-af047129e0d2" alt="WebApi" 
+width="60px">
 </p>
 
 # <p align="center" style="font-size:30px;"><b>Movies App :movie_camera:</b></p>
@@ -45,13 +48,13 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Home Page**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/7b7abc86-e641-4b16-aafa-f46eea4bee00" alt="HomePage-01" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a33517c5-ec50-4906-a97e-7a4cf09276a9" alt="HomePage-01" width="900px">
 </p>
 
 **Home Page**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/621a037d-2c53-4dda-8eca-fc46806b4815" alt="HomePage-02" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/758c8c63-d330-417b-8a13-83ce34025cdb" alt="HomePage-02" width="900px">
 </p>
 
 
@@ -65,7 +68,7 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Movie Details Page**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/09e89747-3615-4462-95e3-6539bfb76c29" alt="MovieDetails" width="600px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/09e89747-3615-4462-95e3-6539bfb76c29" alt="MovieDetails" width="900px">
 </p>
 
 
@@ -78,7 +81,7 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Register new user**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/e7cf9622-f232-42a0-8db8-10a85cb536b5" alt="Register" width="600px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/e7cf9622-f232-42a0-8db8-10a85cb536b5" alt="Register" width="900px">
 </p>
 
 
