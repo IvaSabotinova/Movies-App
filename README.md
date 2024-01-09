@@ -70,7 +70,11 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Add New Movie**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/0d173f5d-cbde-4915-a564-6174424ac0a9" alt="Add-New-Movie" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/0d173f5d-cbde-4915-a564-6174424ac0a9" alt="Add-New-Movie01" width="900px">
+</p>
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/ac74ddbc-cb6b-4317-b300-fb71f338f645" alt="Add-New-Movie02" width="900px">
 </p>
 
 
