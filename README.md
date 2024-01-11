@@ -63,7 +63,7 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Home Page**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/e939faa5-fdfc-45e6-8803-7611e8687b32" alt="HomePage-02" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/6ebdfe39-ce5e-49a8-8c4a-939feb4889be" alt="HomePage-02" width="900px">
 </p>
 
 **Home Page**
