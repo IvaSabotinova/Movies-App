@@ -12,7 +12,7 @@ width="160px">
 
 ### Short Description
 
-The app has a **public part** available without authentication. It reveals all movies, their details as well as enables searches by whole or part of movies' titles, searches per genre and sorting by name A-Z and Z-A.
+The app has a **public part** available without authentication. It reveals all movies, their details as well as enables searches by whole or part of movies' titles, searches per genre and sorting by name A-Z and Z-A. Pagination by different page size is also implemented.
 
 There are two basic roles - **admin** and **user**.
 
@@ -63,7 +63,13 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Home Page**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/758c8c63-d330-417b-8a13-83ce34025cdb" alt="HomePage-02" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/e939faa5-fdfc-45e6-8803-7611e8687b32" alt="HomePage-02" width="900px">
+</p>
+
+**Home Page**
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/758c8c63-d330-417b-8a13-83ce34025cdb" alt="HomePage-03" width="900px">
 </p>
 
 
