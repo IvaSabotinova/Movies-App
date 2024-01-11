@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-
-namespace MoviesWebApi.Services
+﻿namespace MoviesWebApi.Services
 {
+    using MoviesWebApi.Data.Dto;
     public interface IGenreService
     {
-        Task<IEnumerable<SelectListItem>> GetAllGenres();
+        Task<IEnumerable<GenreDto>> GetAllGenres();
     }
 }

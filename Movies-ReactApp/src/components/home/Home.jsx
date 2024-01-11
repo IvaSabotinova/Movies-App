@@ -28,10 +28,10 @@ export default function Home() {
     }, []);
 
     const changeHandler = (e) => {
-        const isSearchTermChanging = e.target.name === 'searchTerm';
-        const currPage = isSearchTermChanging ? 1 : pageOptions.page;
+      //  const isSearchTermGenreIdChanging = e.target.name === 'searchTerm'  || 'genreId';
+      //  const currPage = isSearchTermGenreIdChanging ? 1 : pageOptions.page;
         setFilters(state => ({ ...state, [e.target.name]: e.target.value }));
-        setPageOptions(state => ({ ...state, page: currPage }))
+        setPageOptions(state => ({ ...state, page: 1 }))
     }
 
     useEffect(() => {
@@ -71,7 +71,7 @@ export default function Home() {
                     >
                         <option value="" disabled="">Search By Genre</option>
                         {genres.map(genre => (
-                            <option key={genre.value} value={genre.value}>{genre.text}</option>
+                            <option key={genre.id} value={genre.id}>{genre.name}</option>
                         ))}
                     </select>
 

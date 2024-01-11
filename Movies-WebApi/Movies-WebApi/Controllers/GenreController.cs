@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using MoviesWebApi.Data.Dto;
 using MoviesWebApi.Services;
 
-namespace Movies_WebApi.Controllers
+namespace MoviesWebApi.Controllers
 {
     //[Route("api/[controller]")]
     [Route("api/genres")]
@@ -20,7 +20,7 @@ namespace Movies_WebApi.Controllers
 
         public async Task<IActionResult> GetGenres()
         {
-            IEnumerable<SelectListItem> genres = await this.genreService.GetAllGenres();            
+            IEnumerable<GenreDto> genres = await this.genreService.GetAllGenres();            
             return this.Ok(genres);
         }
     }

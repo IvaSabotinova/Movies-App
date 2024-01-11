@@ -14,6 +14,8 @@ namespace MoviesWebApi.MappingConfiguration
                 .ForMember(x => x.CreatedOn, opt => opt.MapFrom(s => DateTime.Now));
 
             this.CreateMap<Movie, MovieDetailsDto>();
+
+            this.CreateMap<Genre, GenreDto>();
         }
     }
 }

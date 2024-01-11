@@ -44,7 +44,7 @@ export default function MovieCreateUpdate() {
         .then((res) => {
           setMovie({
             title: res.result.title,
-            genreId: genres.find(x => x.text === res.result.genreName)?.value || '',
+            genreId: genres.find(x => x.name === res.result.genreName)?.id || '',
             description: res.result.description,
             duration: res.result.duration,
             releaseDate: formatInputDate(res.result.releaseDate),
@@ -189,7 +189,7 @@ export default function MovieCreateUpdate() {
             >
               <option value="" disabled="">Choose Genre</option>
               {genres.map(genre => (
-                <option key={genre.value} value={genre.value}>{genre.text}</option>
+                <option key={genre.id} value={genre.id}>{genre.name}</option>
               ))}
             </select>
             {errors.genreId && (<p className="errorMessage">{errors.genreId}</p>)}
