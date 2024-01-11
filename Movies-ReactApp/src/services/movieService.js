@@ -27,9 +27,16 @@ export const createMovie = async (data) => {
     return result;
 }
 
-export const getAllMovies = async () => {
-    const response = await fetch(`${BaseUrl}/movies`);
-    const result = response.json();
+export const getAllMovies = async (page, itemsPerPage, searchTerm, genreIdFilter, sort) => {
+    const queryParams = new URLSearchParams({
+        page,
+        itemsPerPage,
+        searchTerm,
+        genreIdFilter,
+        sort
+    });
+    const response = await fetch(`${BaseUrl}/movies?${queryParams}`);
+    const result = response.json();   
     if (!response.ok) {
         throw result;
     }

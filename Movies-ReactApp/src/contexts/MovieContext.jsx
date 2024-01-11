@@ -14,26 +14,26 @@ MovieContext.displayName = 'MovieContext';
 export const MovieProvider = ({
     children
 }) => {
-    const [movies, setMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [apiResponse, setApiResponse] = useState({});
     const navigate = useNavigate();
 
-    const fetchMovies = () => {
-        movieService.getAllMovies()
+    const fetchMovies = (page, itemsPerPage, searchTerm, genreIdFilter, sort) => {
+        movieService.getAllMovies(page, itemsPerPage, searchTerm, genreIdFilter, sort)
             .then((res) => {
                 setIsLoading(false);
-                setMovies(res.result);        
-            });
+                setApiResponse(res.result)
+            })
     }
 
     useEffect(() => {
-        fetchMovies();
+        fetchMovies(1, 4, '', '', '');
     }, []);
 
     const createMovieHandler = async (movie) => {
         const newMovie = await movieService.createMovie(movie);
         console.log(newMovie);
-        fetchMovies();
+        fetchMovies(1, 4, '', '', '');
         ToastNotify("Movie created successfully!", "success");
         navigate(pathToUrl(Paths.MovieDetails, { movieId: newMovie.result.id }))
     }
@@ -41,22 +41,23 @@ export const MovieProvider = ({
     const updateMovieHandler = async (movieId, movie) => {
         const editedMovie = await movieService.updateMovie(movieId, movie);
         console.log(editedMovie);
-        fetchMovies();
+        fetchMovies(1, 4, '', '', '');
         ToastNotify("Movie updated successfully!", "success");
         navigate(pathToUrl(Paths.MovieDetails, { movieId }))
     }
 
     const deleteMovieHandler = async (movieId) => {
         await movieService.deleteMovie(movieId);
-        fetchMovies();
+        fetchMovies(1, 4, '', '', '');
     }
 
     const movieContextValues = {
-        movies,
+        apiResponse,
         isLoading,
         createMovieHandler,
         updateMovieHandler,
         deleteMovieHandler,
+        fetchMovies
     }
 
     return (

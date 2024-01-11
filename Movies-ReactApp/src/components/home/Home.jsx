@@ -10,14 +10,17 @@ import MovieItem from './MovieItem';
 import Loader from '../loader/Loader';
 
 export default function Home() {
-    const { movies, isLoading } = useContext(MovieContext);
+    const { apiResponse, isLoading, fetchMovies } = useContext(MovieContext);
     const [genres, setGenres] = useState([]);
     const [filters, setFilters] = useState({
         searchTerm: '',
         genreId: '',
         sort: ''
+    });
+    const [pageOptions, setPageOptions] = useState({
+        page: 1,
+        pageSize: 4
     })
-    const [filteredSortedMovies, setFilteredSortedMovies] = useState(movies);
 
     useEffect(() => {
         genreService.getAllGenres()
@@ -29,26 +32,27 @@ export default function Home() {
     }
 
     useEffect(() => {
-        let updatedMovies = [...movies];
+        fetchMovies(pageOptions.page, pageOptions.pageSize, filters.searchTerm, filters.genreId, filters.sort);
+    }, [pageOptions, filters]);
 
-        if (filters.searchTerm) {
-            updatedMovies = updatedMovies.filter(movie => movie.title.toLowerCase().includes(filters.searchTerm.toLowerCase()));
+    const getPageDetails = () => {
+        const currentPageStartNumber = (pageOptions.page - 1) * pageOptions.pageSize + 1;
+        const currentPageEndNumber = pageOptions.page * pageOptions.pageSize;
+        return `${currentPageStartNumber} - ${currentPageEndNumber < apiResponse.allItemsCount ? currentPageEndNumber : apiResponse.allItemsCount} of ${apiResponse.allItemsCount}`
+    };
+
+    const handleDirection = (direction) => {
+        if (direction === 'prev') {
+            setPageOptions(state => ({ ...state, page: pageOptions.page - 1 }))
+        } else if (direction === 'next') {
+            setPageOptions(state => ({ ...state, page: pageOptions.page + 1 }))
         }
+    }
 
-        if (filters.genreId) {
-            updatedMovies = updatedMovies.filter(movie => movie.genreId === filters.genreId);
-
-        }
-        if (filters.sort === 'A-Z') {
-            updatedMovies.sort((a, b) => a.title.localeCompare(b.title));
-
-        }
-        if (filters.sort === 'Z-A') {
-            updatedMovies.sort((a, b) => b.title.localeCompare(a.title));
-
-        }
-        setFilteredSortedMovies(updatedMovies)
-    }, [filters, movies]);
+    const pageSizeChangeHandler = (e) => {
+        const newPageSize = Number(e.target.value);
+        setPageOptions({ page: 1, pageSize: newPageSize });
+    }
 
     return (
         <>
@@ -81,7 +85,7 @@ export default function Home() {
                         />
                         <span style={{ position: "relative", left: "-60px", top: "7px" }}>
                             <i className="bi bi-search"></i>
-                        </span>                  
+                        </span>
                     </Form>
 
                     <select className="form-control mt-1 mb-1 form-select select-sort"
@@ -96,14 +100,50 @@ export default function Home() {
                         <option value="Z-A" disabled="">Name Z-A</option>
                     </select>
                 </div>
+
                 <div className="main">
                     {isLoading && <Loader />}
-                    {!isLoading && filteredSortedMovies.length === 0 && <p className="no-movies">No movies found by these criteria!</p>}
-                    {!isLoading && filteredSortedMovies.length > 0 && filteredSortedMovies.map(movie => (<MovieItem
-                        key={movie.id}
-                        {...movie} />))}
-                </div>
+                    {!isLoading && apiResponse.movies.length === 0 && <p className="no-movies">No movies found by these criteria!</p>}
+                    {!isLoading && apiResponse.movies.length > 0 && (
+                        <>
+                            {apiResponse.movies.map(movie => (<MovieItem
+                                key={movie.id}
+                                {...movie} />))}
 
+                            < div className="d-flex mx-5 justify-content-end align-items-center">
+                                <div>Rows per page:  </div>
+                                <div>
+                                    <select name="pageSize" id="pageSize"
+                                        className="form-select mx-2"
+                                        style={{ width: "80px" }}
+                                        value={pageOptions.pageSize}
+                                        onChange={pageSizeChangeHandler}
+                                    >
+                                        <option value="4">4</option>
+                                        <option value="8">8</option>
+                                        <option value="12">12</option>
+                                        <option value="16">16</option>
+                                    </select>
+                                </div>
+                                <div className="mx-2">{getPageDetails()}</div>
+                                <button
+                                    onClick={() => handleDirection("prev")}
+                                    disabled={!apiResponse.hasPreviousPage}
+                                    className="btn btn-outline-info px-3 mx-2"
+                                >
+                                    <i className="bi bi-chevron-left"></i>
+                                </button>
+                                <button
+                                    onClick={() => handleDirection("next")}
+                                    disabled={!apiResponse.hasNextPage}
+                                    className="btn btn-outline-info px-3 mx-2"
+                                >
+                                    <i className="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+                        </>
+                    )}
+                </div>
             </div>
         </>
     );

@@ -113,10 +113,15 @@ namespace MoviesWebApi.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(
+            int page = 1,
+            int itemsPerPage = 4,
+            string? searchTerm = null,
+            string? genreIdFilter = null,
+            string? sort = null)
         {
             this.apiResponse.HttpStatusCode = HttpStatusCode.OK;
-            this.apiResponse.Result = await this.movieService.GetAll();
+            this.apiResponse.Result = await this.movieService.GetAll(page, itemsPerPage, searchTerm, genreIdFilter, sort);
             return this.Ok(this.apiResponse);
         }
 

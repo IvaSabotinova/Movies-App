@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using static MoviesWebApi.Data.Constants;
 
 namespace MoviesWebApi.Data.Dto
@@ -11,9 +10,7 @@ namespace MoviesWebApi.Data.Dto
         public string Title { get; set; } = null!;
 
         [Required]
-        public string GenreId { get; set; } = null!;
-
-       // public IEnumerable<SelectListItem> Genres { get; set; } = new List<SelectListItem>();
+        public string GenreId { get; set; } = null!;       
 
         [Required]
         [StringLength(MovieDescriptionMaxLength, MinimumLength = MovieDescriptionMinLength)]
@@ -24,8 +21,7 @@ namespace MoviesWebApi.Data.Dto
 
         public DateTime ReleaseDate { get; set; }
 
-         [Required]
-         //[RegularExpression(ImageUrlRegex)]
+         [Required]        
          public string ImageUrl { get; set; } = null!;
 
     }

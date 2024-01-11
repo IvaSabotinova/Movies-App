@@ -68,12 +68,59 @@ namespace MoviesWebApi.Services
             await this.moviesRepo.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<MovieInListDto>> GetAll()
+        public async Task<MoviesListDto> GetAll(
+            int page,
+            int itemsPerPage,
+            string? searchTerm = null,
+            string? genreIdFilter = null,
+            string? sort = null)
         {
-            return await this.moviesRepo.AllAsNoTracking()
+            IQueryable<Movie> moviesQuery = this.moviesRepo
+                .AllAsNoTracking()
                 .OrderByDescending(x => x.CreatedOn)
-                .ProjectTo<MovieInListDto>(this.mapper.ConfigurationProvider)
-                .ToListAsync();
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchTerm)) 
+            {
+                string searchQuery = $"%{searchTerm.Trim().ToLower()}%";
+                moviesQuery = moviesQuery.Where(x => EF.Functions.Like(x.Title.ToLower(), searchQuery));
+
+            }
+            if (!string.IsNullOrEmpty(genreIdFilter))
+            {               
+                moviesQuery = moviesQuery.Where(x=>x.GenreId == genreIdFilter);
+            }
+
+            if(!string.IsNullOrEmpty(sort))
+            {
+                if (sort == "A-Z")
+                {
+                    moviesQuery = moviesQuery.OrderBy(x => x.Title);
+                }
+                else if (sort == "Z-A")
+                {
+                    moviesQuery = moviesQuery.OrderByDescending(x => x.Title);
+                }
+            }
+
+            int itemsCount = moviesQuery.Count();
+
+            List<MovieInListDto> movies = await moviesQuery
+            .ProjectTo<MovieInListDto>(this.mapper.ConfigurationProvider)
+            .Skip((page - 1) * itemsPerPage)
+            .Take(itemsPerPage)
+            .ToListAsync();
+
+            return new MoviesListDto()
+            {
+                CurrentPageNumber = page,
+                ItemsPerPage = itemsPerPage,
+                AllItemsCount = itemsCount,
+                Movies = movies,
+                SearchTerm = searchTerm,
+                GenreIdFilter = genreIdFilter,
+                Sort = sort,
+            };
         }
 
     }

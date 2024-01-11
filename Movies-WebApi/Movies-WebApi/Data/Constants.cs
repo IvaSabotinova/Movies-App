@@ -16,9 +16,7 @@
 
         public const int MovieDescriptionMinLength = 10;
 
-        public const int MovieDescriptionMaxLength = 1000;
-
-        public const string ImageUrlRegex = "^https:\\/\\/.+$";
+        public const int MovieDescriptionMaxLength = 1000;        
 
         public const string ImageDataRequiredErrorMessage = "Image data is required.";
 

@@ -19,7 +19,6 @@
         public double Rating { get; set; }
 
         public string ApplicationUserUserName { get; set; }
-
-       // public DateTime CreatedOn { get; set; }
+      
     }
 }
