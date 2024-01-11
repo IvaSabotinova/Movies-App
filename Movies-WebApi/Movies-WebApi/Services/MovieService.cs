@@ -10,14 +10,14 @@ namespace MoviesWebApi.Services
 {
     public class MovieService : IMovieService
     {
-        private readonly IRepository<Movie> moviesRepo;        
+        private readonly IRepository<Movie> moviesRepo;
         private readonly IMapper mapper;
 
         public MovieService(
-            IRepository<Movie> moviesRepo,           
+            IRepository<Movie> moviesRepo,
             IMapper mapper)
         {
-            this.moviesRepo = moviesRepo;            
+            this.moviesRepo = moviesRepo;
             this.mapper = mapper;
         }
 
@@ -80,18 +80,18 @@ namespace MoviesWebApi.Services
                 .OrderByDescending(x => x.CreatedOn)
                 .AsQueryable();
 
-            if (!string.IsNullOrEmpty(searchTerm)) 
+            if (!string.IsNullOrEmpty(searchTerm))
             {
                 string searchQuery = $"%{searchTerm.Trim().ToLower()}%";
                 moviesQuery = moviesQuery.Where(x => EF.Functions.Like(x.Title.ToLower(), searchQuery));
-
             }
+
             if (!string.IsNullOrEmpty(genreIdFilter))
-            {               
-                moviesQuery = moviesQuery.Where(x=>x.GenreId == genreIdFilter);
+            {
+                moviesQuery = moviesQuery.Where(x => x.GenreId == genreIdFilter);
             }
 
-            if(!string.IsNullOrEmpty(sort))
+            if (!string.IsNullOrEmpty(sort))
             {
                 if (sort == "A-Z")
                 {
@@ -103,7 +103,7 @@ namespace MoviesWebApi.Services
                 }
             }
 
-            int itemsCount = moviesQuery.Count();
+            int itemsCount = await moviesQuery.CountAsync();
 
             List<MovieInListDto> movies = await moviesQuery
             .ProjectTo<MovieInListDto>(this.mapper.ConfigurationProvider)

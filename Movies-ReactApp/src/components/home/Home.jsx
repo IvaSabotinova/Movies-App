@@ -28,7 +28,10 @@ export default function Home() {
     }, []);
 
     const changeHandler = (e) => {
-        setFilters(state => ({ ...state, [e.target.name]: e.target.value }))
+        const isSearchTermChanging = e.target.name === 'searchTerm';
+        const currPage = isSearchTermChanging ? 1 : pageOptions.page;
+        setFilters(state => ({ ...state, [e.target.name]: e.target.value }));
+        setPageOptions(state => ({ ...state, page: currPage }))
     }
 
     useEffect(() => {
@@ -106,12 +109,13 @@ export default function Home() {
                     {!isLoading && apiResponse.movies.length === 0 && <p className="no-movies">No movies found by these criteria!</p>}
                     {!isLoading && apiResponse.movies.length > 0 && (
                         <>
-                            {apiResponse.movies.map(movie => (<MovieItem
-                                key={movie.id}
-                                {...movie} />))}
-
+                            <div className="movies-list">
+                                {apiResponse.movies.map(movie => (<MovieItem
+                                    key={movie.id}
+                                    {...movie} />))}
+                            </div>
                             < div className="d-flex mx-5 justify-content-end align-items-center">
-                                <div>Rows per page:  </div>
+                                <div>Items per page:  </div>
                                 <div>
                                     <select name="pageSize" id="pageSize"
                                         className="form-select mx-2"

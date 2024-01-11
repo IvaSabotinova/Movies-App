@@ -18,12 +18,17 @@ export const MovieProvider = ({
     const [apiResponse, setApiResponse] = useState({});
     const navigate = useNavigate();
 
-    const fetchMovies = (page, itemsPerPage, searchTerm, genreIdFilter, sort) => {
+    const fetchMovies = (page, itemsPerPage, searchTerm, genreIdFilter, sort) => {       
         movieService.getAllMovies(page, itemsPerPage, searchTerm, genreIdFilter, sort)
             .then((res) => {
                 setIsLoading(false);
                 setApiResponse(res.result)
             })
+            .catch((err) => {
+                console.error("Error fetching movies:", err);
+                ToastNotify(err, "error")
+                setIsLoading(false);
+            });
     }
 
     useEffect(() => {
