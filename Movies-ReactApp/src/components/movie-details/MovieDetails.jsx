@@ -58,7 +58,10 @@ export default function MovieDetails() {
                 </div>
                 <div className="rating-duration">
                     <div>
-                        <span className="span-star"><i class="bi bi-star"></i></span>
+                        <span className="span-star">
+                            {/* <i class="bi bi-star"></i> */}
+                            ⭐️
+                            </span>
                         <span>{movie.rating} IMDb rating</span>
                     </div>
                     {/* <span><span className="bolded">Rating:</span> {movie.rating}</span> */}
