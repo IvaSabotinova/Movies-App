@@ -54,13 +54,13 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 
 ### :camera: Screenshots
 
-**Home Page**
+**Home Page - Searching & sorting functionalities**
 
 <p align="left">
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a33517c5-ec50-4906-a97e-7a4cf09276a9" alt="HomePage-01" width="900px">
 </p>
 
-**Home Page**
+**Home Page - Pagination**
 
 <p align="left">
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/6ebdfe39-ce5e-49a8-8c4a-939feb4889be" alt="HomePage-02" width="900px">

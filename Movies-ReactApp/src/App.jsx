@@ -16,6 +16,7 @@ import Login from './components/login/Login';
 import Logout from './components/logout/Logout';
 import NotFound from './components/not-found/NotFound';
 import MovieCreateUpdate from './components/movie-create-update/MovieCreateUpdate';
+import StarRating from './components/star-rating/StarRating';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path={Paths.Logout} element={<Logout />} />
             <Route path={Paths.CreateMovie} element={<MovieCreateUpdate />} />
             <Route path={Paths.UpdateMovie} element={<MovieCreateUpdate />} />
+            <Route path={Paths.StarRating} element={<StarRating/>}/>
             <Route path={Paths.NotFound} element={<NotFound />} />
           </Routes>
           <ToastContainer />

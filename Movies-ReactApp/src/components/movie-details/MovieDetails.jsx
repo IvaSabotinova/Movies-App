@@ -77,7 +77,7 @@ export default function MovieDetails() {
                     <span><span className="bolded">Release date:</span> {formatDetailsDate(movie.releaseDate)}</span>
                     <button onClick={() => { navigate(-1) }}>Back</button>
                 </div>
-                {movie.applicationUserUserName === username &&
+                {(movie.applicationUserUserName === username || username === 'admin') &&
                     <div className="edit-delete-buttons mt-2">
                         <button className="btn btn-info" onClick={() => navigate(pathToUrl(Paths.UpdateMovie, { movieId }))}>
                             <i className="bi bi-pencil-fill"></i> Edit
