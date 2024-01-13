@@ -1,1 +1,14 @@
+.star-rating-container {
+    display: flex;
+    align-items: center;
+    gap: 7px;
 
+}
+
+.all-stars-container {
+    display: flex;
+}
+
+.rating-number {
+    margin: 0px;
+}

@@ -8,6 +8,7 @@ namespace MoviesWebApi.Data
         public Movie()
         {
             this.Id = Guid.NewGuid().ToString();
+            this.Ratings = new HashSet<UserMovieRating>();
         }
         public string Id { get; set; }
 
@@ -27,15 +28,14 @@ namespace MoviesWebApi.Data
         public DateTime ReleaseDate { get; set; }
 
         [Required]
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; }  
 
-        [Range(1, 10.00)]
-        public double Rating { get; set; }
-
-        public string ApplicationUserId { get; set; }
+        public string ApplicationUserId { get; set; } //creator of the movie
 
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         public DateTime CreatedOn { get; set; }
+
+        public virtual ICollection<UserMovieRating> Ratings { get; set; }
     }
 }

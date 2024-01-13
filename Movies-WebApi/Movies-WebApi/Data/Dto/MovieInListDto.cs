@@ -12,6 +12,6 @@ namespace MoviesWebApi.Data.Dto
 
         public string ImageUrl { get; set; }
        
-        public double Rating { get; set; }
+        public double AverageRating { get; set; }
     }
 }

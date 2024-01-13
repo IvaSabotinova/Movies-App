@@ -48,5 +48,7 @@
 
         public const string UserNotFound = "User not found!";
 
+        public const string UserMovieNotExits = "User and/or movie not found!";
+
     }
 }

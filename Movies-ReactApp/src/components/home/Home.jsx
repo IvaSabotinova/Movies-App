@@ -27,9 +27,7 @@ export default function Home() {
             .then(setGenres)
     }, []);
 
-    const changeHandler = (e) => {
-      //  const isSearchTermGenreIdChanging = e.target.name === 'searchTerm'  || 'genreId';
-      //  const currPage = isSearchTermGenreIdChanging ? 1 : pageOptions.page;
+    const changeHandler = (e) => {      
         setFilters(state => ({ ...state, [e.target.name]: e.target.value }));
         setPageOptions(state => ({ ...state, page: 1 }))
     }

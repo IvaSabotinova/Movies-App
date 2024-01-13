@@ -16,7 +16,7 @@
 
         public string ImageUrl { get; set; }
 
-        public double Rating { get; set; }
+        public double AverageRating { get; set; }
 
         public string ApplicationUserUserName { get; set; }
       

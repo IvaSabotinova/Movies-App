@@ -8,7 +8,7 @@ import { pathToUrl } from '../../utils/pathsUtil';
 export default function MovieItem({
     id,
     title,
-    rating,
+    averageRating,
     imageUrl
 }) {
     const navigate = useNavigate();
@@ -24,7 +24,7 @@ export default function MovieItem({
             </div>
             <div className="movie-info">
                 <h3>Title: {title}</h3>
-                <p>Rating: {rating}</p>
+                <p>Rating: {averageRating}</p>
             </div>
         </div>
     );

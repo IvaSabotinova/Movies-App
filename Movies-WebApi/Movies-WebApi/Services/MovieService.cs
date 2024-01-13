@@ -36,11 +36,11 @@ namespace MoviesWebApi.Services
 
         public async Task<MovieDetailsDto> GetMovieDetails(string movieId)
         => await this.moviesRepo.AllAsNoTracking()
-                .Where(x => x.Id == movieId)
-                .Include(x => x.ApplicationUser)
-                .Include(x => x.Genre)
-                .ProjectTo<MovieDetailsDto>(this.mapper.ConfigurationProvider)
-                .FirstAsync();
+               .Where(x => x.Id == movieId)
+               .Include(x => x.ApplicationUser)
+               .Include(x => x.Genre)      
+               .ProjectTo<MovieDetailsDto>(this.mapper.ConfigurationProvider)
+               .FirstAsync();
 
         public async Task<Movie> UpdateMovie(string movieId, MovieDto movieDto)
         {

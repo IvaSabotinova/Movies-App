@@ -21,12 +21,11 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Killers of the Flower Moon",
                     Description = "When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered one by one—until the FBI steps in to unravel the mystery.",
                     GenreId = "0a492052-f154-4fff-a2eb-3999d0387535",
-                    Duration = 206,
-                    Rating = 0, //7.6
+                    Duration = 206,                   
                     ReleaseDate = DateTime.ParseExact("18-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/KillersOfTheFlowerMoon.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
-                    CreatedOn = DateTime.Now
+                    CreatedOn = DateTime.Now,                            
                 },
                 new Movie()
                 {
@@ -34,8 +33,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Freelance",
                     Description = "An ex-special forces operative takes a job to provide security for a journalist as she interviews a dictator, but a military coup breaks out in the middle of the interview, they are forced to escape into the jungle where they must survive.",
                     GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
-                    Duration = 108,
-                    Rating = 0, //6.2
+                    Duration = 108,                    
                     ReleaseDate = DateTime.ParseExact("05-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                    ImageUrl = "/images/db-images/Freelance.jpeg",                   
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
@@ -47,8 +45,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Trolls Band Together",
                     Description = "When Branch's brother, Floyd, is kidnapped for his musical talents by a pair of nefarious pop-star villains, Branch and Poppy embark on a harrowing and emotional journey to reunite the other brothers and rescue Floyd from a fate even worse than pop-culture obscurity.",
                     GenreId = "380b3fe3-e7b5-46bf-8bfd-65bf99031043",
-                    Duration = 92,
-                    Rating = 0, //7.1
+                    Duration = 92,                   
                     ReleaseDate = DateTime.ParseExact("12-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                      ImageUrl = "/images/db-images/TrollsBandTogether.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
@@ -61,8 +58,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Leo",
                     Description = "Jaded 74-year-old lizard Leo has been stuck in the same Florida classroom for decades with his terrarium-mate turtle. When he learns he only has one year left to live, he plans to escape to experience life on the outside but instead gets caught up in the problems of his anxious students — including an impossibly mean substitute teacher.",
                     GenreId = "380b3fe3-e7b5-46bf-8bfd-65bf99031043",
-                    Duration = 102,
-                    Rating = 0, //7.6
+                    Duration = 102, 
                     ReleaseDate = DateTime.ParseExact("17-11-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/Leo.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
@@ -74,8 +70,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Wonka",
                     Description = "Willy Wonka – chock-full of ideas and determined to change the world one delectable bite at a time – is proof that the best things in life begin with a dream, and if you’re lucky enough to meet Willy Wonka, anything is possible.",
                     GenreId = "e226393d-c715-4d6e-bd0b-0dca06108336",
-                    Duration = 117,
-                    Rating = 0, //7.0
+                    Duration = 117,                    
                     ReleaseDate = DateTime.ParseExact("06-12-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/Wonka.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
@@ -87,8 +82,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "The Dark Kingdom",
                     Description = "To save their Kingdom from an army of undead, a group of warriors must travel through the forbidden lands fighting the fearsome beasts that call The Dark Kingdom their home.",
                     GenreId = "02b16bb6-0164-4143-b6b8-5a470b5d9eb4",
-                    Duration = 85,
-                    Rating = 0, //5.7
+                    Duration = 85,                    
                     ReleaseDate = DateTime.ParseExact("26-11-2018", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/TheDarkKingdom.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
@@ -100,8 +94,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Oppenheimer",
                     Description = "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
                     GenreId = "0a492052-f154-4fff-a2eb-3999d0387535",
-                    Duration = 181,
-                    Rating = 0, //8.1
+                    Duration = 181,                    
                     ReleaseDate = DateTime.ParseExact("19-07-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/Oppenheimer.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
@@ -113,8 +106,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Shockwave: Countdown to Disaster",
                     Description = "A stolen seismic weapon is activated in Yemen. A hostage freed there tries in vain to warn against its global effect. It starts seismic activity at the Californian fault line where her daughter and ex are monitoring it. Can they stop it?",
                     GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
-                    Duration = 90,
-                    Rating = 0, //5.6
+                    Duration = 90,                    
                     ReleaseDate = DateTime.ParseExact("02-09-2017", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                    ImageUrl = "/images/db-images/Shockwave-CountdownToDisaster.jpeg",
                     ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
@@ -126,8 +118,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "A Man of Reason",
                     Description = "After 10 years of incarceration on behalf of his employer, all Su-hyuk wants is a normal life - one he hopes will include his former girlfriend, Min-seo, and their daughter, In-bi. But once you've penetrated the upper echelons of the underworld, normal can prove hard to come by. Sometime in the past decade, meanwhile, Su-hyuk's employer has adopted an air of legitimacy. These days, the old gang steal and murder in the name of urban development. And they want the reluctant Su-hyuk on board.",
                     GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
-                    Duration = 103,
-                    Rating = 0,//5.7
+                    Duration = 103,                   
                     ReleaseDate = DateTime.ParseExact("15-08-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/AManOfReason.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
@@ -139,8 +130,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Robot Apocalypse",
                     Description = "An expert hacker is targeted by a sentient AI after she realizes the threat it poses, and she must try to stay off its radar long enough to stop it.",
                     GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
-                    Duration = 87,
-                    Rating = 0, //3.4
+                    Duration = 87,                 
                     ReleaseDate = DateTime.ParseExact("26-07-2021", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/RobotApocalypse.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
@@ -152,8 +142,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Wifelike",
                     Description = "A grieving detective in the near-future hunts down criminals who trade artificial humans on the black market. In the fight to end AI exploitation, an underground resistance attempts to infiltrate him by sabotaging the programming of the artificial human assigned as his companion to behave like his late wife. She begins to question her reality as memories of a past life begin to surface in a world where nothing is as it seems.",
                     GenreId = "f6ad08bd-4b20-4516-a874-8b74bc200c28",
-                    Duration = 106,
-                    Rating = 0, //7.0
+                    Duration = 106,                   
                     ReleaseDate = DateTime.ParseExact("12-08-2022", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/Wifelike.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
@@ -165,8 +154,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Fast X",
                     Description = "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they've ever faced: A terrifying threat emerging from the shadows of the past who's fueled by blood revenge, and who is determined to shatter this family and destroy everything—and everyone—that Dom loves, forever.",
                     GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
-                    Duration = 172,
-                    Rating = 0, //7.2
+                    Duration = 172,                   
                     ReleaseDate = DateTime.ParseExact("17-05-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/FastX.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
@@ -178,8 +166,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Five Nights at Freddy's",
                     Description = "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
                     GenreId = "f88d69a3-a968-4789-ab94-812d13fb5c76",
-                    Duration = 110,
-                    Rating = 0, //7.8
+                    Duration = 110,                    
                     ReleaseDate = DateTime.ParseExact("25-10-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/FiveNightsArFreddy's.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
@@ -191,8 +178,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "Reign of Chaos",
                     Description = "When the world is gripped by a plague unleashed by the evil lord Chaos, and humans are turned into rabid creatures, mankind can only be saved by three young women, descendants of a Goddess, with the power to stop Chaos' evil.",
                     GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
-                    Duration = 77,
-                    Rating = 0, //5.7
+                    Duration = 77,                   
                     ReleaseDate = DateTime.ParseExact("12-04-2022", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/ReignOfChaos.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
@@ -204,8 +190,7 @@ namespace Movies_WebApi.Data.Configuration
                     Title = "The Hunger Games: The Ballad of Songbirds & Snakes",
                     Description = "64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12.",
                     GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
-                    Duration = 157,
-                    Rating = 0, //7.3
+                    Duration = 157,                   
                     ReleaseDate = DateTime.ParseExact("15-11-2023", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                     ImageUrl = "/images/db-images/TheHungerGames-TheBalladOfSongbirds&Snakes.jpeg",
                     ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",

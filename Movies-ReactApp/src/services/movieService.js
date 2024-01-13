@@ -36,7 +36,7 @@ export const getAllMovies = async (page, itemsPerPage, searchTerm, genreIdFilter
         sort
     });
     const response = await fetch(`${BaseUrl}/movies?${queryParams}`);
-    const result = await response.json();    
+    const result = await response.json();       
     if (!response.ok) {
         throw result;
     }
@@ -45,7 +45,7 @@ export const getAllMovies = async (page, itemsPerPage, searchTerm, genreIdFilter
 
 export const getMovieDetails = async (movieId) => {
     const response = await fetch(`${BaseUrl}/movies/${movieId}`);
-    const result = await response.json();
+    const result = await response.json();    
     if (!response.ok) {
         throw result;
     }

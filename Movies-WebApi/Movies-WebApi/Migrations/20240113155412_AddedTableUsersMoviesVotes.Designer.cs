@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MoviesWebApi.Data;
 
@@ -11,9 +12,10 @@ using MoviesWebApi.Data;
 namespace Movies_WebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240113155412_AddedTableUsersMoviesVotes")]
+    partial class AddedTableUsersMoviesVotes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -257,13 +259,13 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "595fdbef-2f26-4d9e-8b59-07a46309ac7c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2f69af44-1fb6-4ce9-b2b6-b5344651de4a",
+                            ConcurrencyStamp = "7ac72e8a-72cf-4f74-9cc3-b1af7f0bf96c",
                             Email = "admin@abv.bg",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ABV.BG",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAsJmVwlAMyRdeM+xLLpqcU3Imzy8wwZP+nG5WRhWXHwDimDbMUBzA8A4fbJMCReZQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP/BNbd9+UuXd8gdWmc7gPd/NxpQEvOpTWI/z6xmaM3yWES1HuGUHY4hUjQhHTiNkA==",
                             PhoneNumber = "+359889694030",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "72961cc8-9558-4700-8a36-19adf9e1f5c0",
@@ -274,13 +276,13 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cb370623-bfea-4d2c-89d2-1aa8c3561521",
+                            ConcurrencyStamp = "af55837a-48d1-442b-b3c7-f85ea4254479",
                             Email = "george@abv.bg",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "GEORGE@ABV.BG",
                             NormalizedUserName = "GEORGE",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPzAr0UFPxO7K7sgGDAohUbgbCWaGilkS3aTrY5okqbjZU/JjOWWin6n5xuDMWTpvQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHlDKRoBj94z+8N/A7fWmU7tCYW7Q3PZqtPTHEaoC2g+hPdODudpwBsNw+viDKJPPg==",
                             PhoneNumber = "+359888111111",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5cf80d8c-a6a5-4594-84a3-7b5828c21191",
@@ -291,13 +293,13 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "c769b464-2126-4249-9809-7b8aad21d7fa",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b158e71d-667f-40d9-846b-8fe9db8f205f",
+                            ConcurrencyStamp = "3a29d15a-69d4-431f-acfc-611e4a953970",
                             Email = "katya@abv.bg",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "KATYA@ABV.BG",
                             NormalizedUserName = "KATYA",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIm9jkdJdrKrSr1+UxCJUXAPOAvxX6aOiKH73NLOSFRYeTMhIQqLrumehngpZqVVrw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEG/MmaeOQ98K6/GApDXWkGiRzy5kw9X6MEG4LIdG8iuCSN4aup/pYAPMUhjaUlh30g==",
                             PhoneNumber = "+359888222222",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "42e02d95-161f-4676-a5e1-410b07c0e3d0",
@@ -417,7 +419,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "9cb5b0c8-3f8f-4c5f-93f8-11d787f2c3b4",
                             ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
-                            CreatedOn = new DateTime(2024, 1, 14, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7677),
+                            CreatedOn = new DateTime(2024, 1, 13, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4573),
                             Description = "When oil is discovered in 1920s Oklahoma under Osage Nation land, the Osage people are murdered one by one—until the FBI steps in to unravel the mystery.",
                             Duration = 206,
                             GenreId = "0a492052-f154-4fff-a2eb-3999d0387535",
@@ -429,7 +431,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "96b3391f-5f7d-4813-8edb-80dfd8e8f11c",
                             ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
-                            CreatedOn = new DateTime(2024, 1, 13, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7739),
+                            CreatedOn = new DateTime(2024, 1, 12, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4625),
                             Description = "An ex-special forces operative takes a job to provide security for a journalist as she interviews a dictator, but a military coup breaks out in the middle of the interview, they are forced to escape into the jungle where they must survive.",
                             Duration = 108,
                             GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
@@ -441,7 +443,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "515ae48d-59c7-4abb-a15c-233c077139aa",
                             ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
-                            CreatedOn = new DateTime(2024, 1, 12, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7750),
+                            CreatedOn = new DateTime(2024, 1, 11, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4634),
                             Description = "When Branch's brother, Floyd, is kidnapped for his musical talents by a pair of nefarious pop-star villains, Branch and Poppy embark on a harrowing and emotional journey to reunite the other brothers and rescue Floyd from a fate even worse than pop-culture obscurity.",
                             Duration = 92,
                             GenreId = "380b3fe3-e7b5-46bf-8bfd-65bf99031043",
@@ -453,7 +455,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "c5bc33b7-1d32-4a5e-ad4b-12c7ad623941",
                             ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
-                            CreatedOn = new DateTime(2024, 1, 11, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7760),
+                            CreatedOn = new DateTime(2024, 1, 10, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4643),
                             Description = "Jaded 74-year-old lizard Leo has been stuck in the same Florida classroom for decades with his terrarium-mate turtle. When he learns he only has one year left to live, he plans to escape to experience life on the outside but instead gets caught up in the problems of his anxious students — including an impossibly mean substitute teacher.",
                             Duration = 102,
                             GenreId = "380b3fe3-e7b5-46bf-8bfd-65bf99031043",
@@ -465,7 +467,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "e7dd77fa-7fc1-4b55-8aa1-4b43bb73c19f",
                             ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
-                            CreatedOn = new DateTime(2024, 1, 10, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7854),
+                            CreatedOn = new DateTime(2024, 1, 9, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4652),
                             Description = "Willy Wonka – chock-full of ideas and determined to change the world one delectable bite at a time – is proof that the best things in life begin with a dream, and if you’re lucky enough to meet Willy Wonka, anything is possible.",
                             Duration = 117,
                             GenreId = "e226393d-c715-4d6e-bd0b-0dca06108336",
@@ -477,7 +479,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "9feac707-77eb-456b-a5e0-483c9fc65c96",
                             ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
-                            CreatedOn = new DateTime(2024, 1, 9, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7866),
+                            CreatedOn = new DateTime(2024, 1, 8, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4663),
                             Description = "To save their Kingdom from an army of undead, a group of warriors must travel through the forbidden lands fighting the fearsome beasts that call The Dark Kingdom their home.",
                             Duration = 85,
                             GenreId = "02b16bb6-0164-4143-b6b8-5a470b5d9eb4",
@@ -489,7 +491,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "4cbe3454-a451-418b-8ea0-f1f5fe540002",
                             ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
-                            CreatedOn = new DateTime(2024, 1, 8, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7876),
+                            CreatedOn = new DateTime(2024, 1, 7, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4672),
                             Description = "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
                             Duration = 181,
                             GenreId = "0a492052-f154-4fff-a2eb-3999d0387535",
@@ -501,7 +503,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "947c6c71-4273-4ccb-b0da-422f89f7d378",
                             ApplicationUserId = "b276b391-ab92-41f7-a4a6-f29e8525a3f5",
-                            CreatedOn = new DateTime(2024, 1, 7, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7886),
+                            CreatedOn = new DateTime(2024, 1, 6, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4683),
                             Description = "A stolen seismic weapon is activated in Yemen. A hostage freed there tries in vain to warn against its global effect. It starts seismic activity at the Californian fault line where her daughter and ex are monitoring it. Can they stop it?",
                             Duration = 90,
                             GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
@@ -513,7 +515,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "81689a51-4cb2-483f-a3d6-da6107da4ed0",
                             ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
-                            CreatedOn = new DateTime(2024, 1, 6, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7897),
+                            CreatedOn = new DateTime(2024, 1, 5, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4694),
                             Description = "After 10 years of incarceration on behalf of his employer, all Su-hyuk wants is a normal life - one he hopes will include his former girlfriend, Min-seo, and their daughter, In-bi. But once you've penetrated the upper echelons of the underworld, normal can prove hard to come by. Sometime in the past decade, meanwhile, Su-hyuk's employer has adopted an air of legitimacy. These days, the old gang steal and murder in the name of urban development. And they want the reluctant Su-hyuk on board.",
                             Duration = 103,
                             GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
@@ -525,7 +527,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "74d857da-6b3f-4d25-9b18-e0dbeff061a6",
                             ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
-                            CreatedOn = new DateTime(2024, 1, 5, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7910),
+                            CreatedOn = new DateTime(2024, 1, 4, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4705),
                             Description = "An expert hacker is targeted by a sentient AI after she realizes the threat it poses, and she must try to stay off its radar long enough to stop it.",
                             Duration = 87,
                             GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
@@ -537,7 +539,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "9c762863-ba47-4ab2-acbc-930a31fa2dfd",
                             ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
-                            CreatedOn = new DateTime(2024, 1, 4, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7920),
+                            CreatedOn = new DateTime(2024, 1, 3, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4714),
                             Description = "A grieving detective in the near-future hunts down criminals who trade artificial humans on the black market. In the fight to end AI exploitation, an underground resistance attempts to infiltrate him by sabotaging the programming of the artificial human assigned as his companion to behave like his late wife. She begins to question her reality as memories of a past life begin to surface in a world where nothing is as it seems.",
                             Duration = 106,
                             GenreId = "f6ad08bd-4b20-4516-a874-8b74bc200c28",
@@ -549,7 +551,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "9867b25f-69af-40ff-b5df-b461eb5232df",
                             ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
-                            CreatedOn = new DateTime(2024, 1, 3, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7930),
+                            CreatedOn = new DateTime(2024, 1, 2, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4723),
                             Description = "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they've ever faced: A terrifying threat emerging from the shadows of the past who's fueled by blood revenge, and who is determined to shatter this family and destroy everything—and everyone—that Dom loves, forever.",
                             Duration = 172,
                             GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
@@ -561,7 +563,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "0f744962-21c0-4dcf-af3f-c3b91ddf321b",
                             ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
-                            CreatedOn = new DateTime(2024, 1, 2, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7940),
+                            CreatedOn = new DateTime(2024, 1, 1, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4732),
                             Description = "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
                             Duration = 110,
                             GenreId = "f88d69a3-a968-4789-ab94-812d13fb5c76",
@@ -573,7 +575,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "4abeaca8-0683-45ac-acc1-e628f78a9bc1",
                             ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
-                            CreatedOn = new DateTime(2024, 1, 1, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7981),
+                            CreatedOn = new DateTime(2023, 12, 31, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4753),
                             Description = "When the world is gripped by a plague unleashed by the evil lord Chaos, and humans are turned into rabid creatures, mankind can only be saved by three young women, descendants of a Goddess, with the power to stop Chaos' evil.",
                             Duration = 77,
                             GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
@@ -585,7 +587,7 @@ namespace Movies_WebApi.Migrations
                         {
                             Id = "a127a2e1-a4f9-46ac-a687-ea95d77074bb",
                             ApplicationUserId = "c769b464-2126-4249-9809-7b8aad21d7fa",
-                            CreatedOn = new DateTime(2023, 12, 31, 0, 4, 8, 188, DateTimeKind.Local).AddTicks(7991),
+                            CreatedOn = new DateTime(2023, 12, 30, 17, 54, 12, 411, DateTimeKind.Local).AddTicks(4763),
                             Description = "64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12.",
                             Duration = 157,
                             GenreId = "df4b7cce-f599-483f-acf6-7d2af941853f",
@@ -595,7 +597,7 @@ namespace Movies_WebApi.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MoviesWebApi.Data.UserMovieRating", b =>
+            modelBuilder.Entity("MoviesWebApi.Data.UserMovieVote", b =>
                 {
                     b.Property<string>("ApplicationUserId")
                         .HasColumnType("nvarchar(450)");
@@ -613,7 +615,7 @@ namespace Movies_WebApi.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("UsersMoviesRatings");
+                    b.ToTable("UsersMoviesVotes");
 
                     b.HasData(
                         new
@@ -793,16 +795,16 @@ namespace Movies_WebApi.Migrations
                     b.Navigation("Genre");
                 });
 
-            modelBuilder.Entity("MoviesWebApi.Data.UserMovieRating", b =>
+            modelBuilder.Entity("MoviesWebApi.Data.UserMovieVote", b =>
                 {
                     b.HasOne("MoviesWebApi.Data.ApplicationUser", "ApplicationUser")
-                        .WithMany("RatedMovies")
+                        .WithMany("VotedMovies")
                         .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("MoviesWebApi.Data.Movie", "Movie")
-                        .WithMany("Ratings")
+                        .WithMany("Votes")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -816,7 +818,7 @@ namespace Movies_WebApi.Migrations
                 {
                     b.Navigation("Movies");
 
-                    b.Navigation("RatedMovies");
+                    b.Navigation("VotedMovies");
                 });
 
             modelBuilder.Entity("MoviesWebApi.Data.Genre", b =>
@@ -826,7 +828,7 @@ namespace Movies_WebApi.Migrations
 
             modelBuilder.Entity("MoviesWebApi.Data.Movie", b =>
                 {
-                    b.Navigation("Ratings");
+                    b.Navigation("Votes");
                 });
 #pragma warning restore 612, 618
         }

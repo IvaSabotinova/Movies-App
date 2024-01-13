@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using MoviesWebApi.Data;
 
 namespace MoviesWebApi.Data
 {
@@ -9,8 +8,11 @@ namespace MoviesWebApi.Data
         {
             this.Id = Guid.NewGuid().ToString();
             this.Movies = new HashSet<Movie>();
+            this.RatedMovies = new HashSet<UserMovieRating>();
         }
 
         public virtual ICollection<Movie> Movies { get; set; }
+
+        public virtual ICollection<UserMovieRating> RatedMovies { get; set; }
     }
 }

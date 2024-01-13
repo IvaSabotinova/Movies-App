@@ -8,12 +8,20 @@ namespace MoviesWebApi.MappingConfiguration
     {
         public MovieProfile()
         {
-            this.CreateMap<Movie, MovieInListDto>();
+            this.CreateMap<Movie, MovieInListDto>()
+                .ForMember(x => x.AverageRating, opt => opt
+                .MapFrom(src => src.Ratings.Any() 
+                ? (double)src.Ratings.Sum(x => x.Rating) / src.Ratings.Count 
+                : 0));
 
             this.CreateMap<MovieDto, Movie>()
                 .ForMember(x => x.CreatedOn, opt => opt.MapFrom(s => DateTime.Now));
 
-            this.CreateMap<Movie, MovieDetailsDto>();
+            this.CreateMap<Movie, MovieDetailsDto>()
+                .ForMember(x => x.AverageRating, opt => opt
+                .MapFrom(src => src.Ratings.Any()
+                ? (double)src.Ratings.Sum(x => x.Rating) / src.Ratings.Count
+                : 0));
 
             this.CreateMap<Genre, GenreDto>();
         }

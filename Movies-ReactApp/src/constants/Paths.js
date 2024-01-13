@@ -9,8 +9,7 @@ const Paths = {
     Login: '/login',
     Logout: '/logout',
     CreateMovie: '/create-movie',
-    UpdateMovie: '/update-movie/:movieId',
-    StarRating: '/star-rating',
+    UpdateMovie: '/update-movie/:movieId',  
     NotFound: '*'
 }
 

@@ -4,14 +4,19 @@ import './StarRating.css';
 
 import Star from './Star';
 
-export default function StarRating() {
+export default function StarRating({
+    movieId,
+    userId
+}) {
     const [rating, setRating] = useState(0);
     const [tempRating, setTempRating] = useState(0);
 
+    
+
     return (
-        <div>
-            <div style={{ marginTop: '100px' }}>
-                {Array.from({ length: 5 }, (_, index) => (
+        <div className="star-rating-container">
+            <div className="all-stars-container">
+                {Array.from({ length: 10 }, (_, index) => (
                     <Star
                         key={index}
                         onRate={() => setRating(index + 1)}
@@ -21,7 +26,7 @@ export default function StarRating() {
                     />
                 ))}
             </div>
-            <p>{tempRating || rating || ''}</p>
+            <p className="rating-number">{tempRating || rating || ''}</p>
         </div>
     );
 }
