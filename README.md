@@ -56,33 +56,51 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 
 ### :camera: Screenshots
 
-**Home Page - Searching & sorting functionalities**
+**Home Page - Searching / sorting by genres**
 
 <p align="left">
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a33517c5-ec50-4906-a97e-7a4cf09276a9" alt="HomePage-01" width="900px">
 </p>
 
+**Home Page - Searching movies'titles**
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/f7c836b0-be0b-4c1e-afe4-195c7fb0b24e" alt="HomePage-02" width="900px">
+</p>
+
+**Home Page - Sorting movies titles A-Z**
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/c6d1239c-59b2-456f-a3ac-e755d9c250cb" alt="HomePage-03" width="900px">
+</p>
+
+**Home Page - Sorting movies titles Z-A**
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/186d4be8-2204-4886-8619-558298933176" alt="HomePage-04" width="900px">
+</p>
+
 **Home Page - Pagination**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a979bb21-f17e-43e3-9b47-8ccef3ddf6a2" alt="HomePage-02" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a979bb21-f17e-43e3-9b47-8ccef3ddf6a2" alt="HomePage-05" width="900px">
 </p>
 
 **Home Page**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/af762d6c-a1a5-4b11-b0d3-980766ad288e" alt="HomePage-03" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/af762d6c-a1a5-4b11-b0d3-980766ad288e" alt="HomePage-06" width="900px">
 </p>
 
 
 **Add New Movie**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/ac74ddbc-cb6b-4317-b300-fb71f338f645" alt="Add-New-Movie02" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/ac74ddbc-cb6b-4317-b300-fb71f338f645" alt="Add-New-Movie01" width="900px">
 </p>
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/0d173f5d-cbde-4915-a564-6174424ac0a9" alt="Add-New-Movie01" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/0d173f5d-cbde-4915-a564-6174424ac0a9" alt="Add-New-Movie02" width="900px">
 </p>
 
 
@@ -99,14 +117,14 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/00ac55cd-b5e4-41d3-bda8-c8c9cc24b254" alt="Edit-Movie" width="900px">    
 </p>
 
-"**Star Rating Functionality & React-Toastify**
+**Star Rating Functionality & React-Toastify**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/635cc9c1-4c8b-4dfc-834f-afd676880fae" alt="Edit-Movie" width="900px">    
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/635cc9c1-4c8b-4dfc-834f-afd676880fae" alt="star-rating-new" width="900px">    
 </p>
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a19c5b6f-1ec2-4a39-98d2-194b1dc0be68" alt="Edit-Movie" width="900px">    
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a19c5b6f-1ec2-4a39-98d2-194b1dc0be68" alt="star-rating-update" width="900px">    
 </p>
 
 
@@ -125,6 +143,6 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Successful log in**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/9555d76f-11fb-464c-85bb-63b765a7f00a" alt="Login" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/9555d76f-11fb-464c-85bb-63b765a7f00a" alt="login-toastify" width="900px">
 </p>
 
