@@ -59,31 +59,31 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Home Page - Searching / sorting by genres**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a33517c5-ec50-4906-a97e-7a4cf09276a9" alt="HomePage-01" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/0fa14431-e7b0-4b9d-8000-8380c6d622bb" alt="HomePage-01" width="900px">
 </p>
 
-**Home Page - Searching movies'titles**
+**Home Page – Sorting by name and rating (ascending & descending)**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/f7c836b0-be0b-4c1e-afe4-195c7fb0b24e" alt="HomePage-02" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/b96c48a9-69ff-45c0-a20a-3990301eb309" alt="HomePage-02" width="900px">
 </p>
 
-**Home Page - Sorting movies titles A-Z**
+**Home Page - Searching movies' titles**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/c6d1239c-59b2-456f-a3ac-e755d9c250cb" alt="HomePage-03" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/76793ebc-f232-4315-9679-18c3f8421697" alt="HomePage-03" width="900px">
 </p>
 
-**Home Page - Sorting movies titles Z-A**
+**Home Page – Searching / sorting by all / different criteria**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/186d4be8-2204-4886-8619-558298933176" alt="HomePage-04" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/758c5c9b-08a1-43fd-a5ea-a958a126e2d8" alt="HomePage-04" width="900px">
 </p>
 
 **Home Page - Pagination**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a979bb21-f17e-43e3-9b47-8ccef3ddf6a2" alt="HomePage-05" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/f771534d-3de1-4d2f-adb9-7a168a42ee2f" alt="HomePage-05" width="900px">
 </p>
 
 **Home Page**
@@ -143,6 +143,6 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Successful log in**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/9555d76f-11fb-464c-85bb-63b765a7f00a" alt="login-toastify" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/2946f04a-3327-4260-86a0-8198772af5f8" alt="login-toastify" width="900px">
 </p>
 

@@ -60,7 +60,7 @@ export default function Home() {
             <div className="wrapper">
                 <div className="select">
                     <select className="form-control mt-1 mb-1 form-select select-genre"
-                        style={{ width: "200px" }}
+                        style={{ width: "190px" }}
                         id="genreId"
                         name="genreId"
                         required
@@ -94,11 +94,13 @@ export default function Home() {
                         id="sort"
                         value={filters.sort}
                         onChange={changeHandler}
-                        style={{ width: "200px" }}
+                        style={{ width: "190px" }}
                     >
-                        <option value="" disabled="">Sort Alphabetically</option>
+                        <option value="" disabled="">Sort By</option>
                         <option value="A-Z" disabled="">Name A-Z</option>
                         <option value="Z-A" disabled="">Name Z-A</option>
+                        <option value="0-10" disabled="">Rating 0-10</option>
+                        <option value="10-0" disabled="">Rating 10-0</option>
                     </select>
                 </div>
 

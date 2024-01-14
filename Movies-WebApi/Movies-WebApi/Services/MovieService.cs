@@ -101,6 +101,16 @@ namespace MoviesWebApi.Services
                 {
                     moviesQuery = moviesQuery.OrderByDescending(x => x.Title);
                 }
+                else if (sort == "0-10")
+                {
+                    moviesQuery = moviesQuery.OrderBy(x => x.Ratings.Any()
+                    ? (double)x.Ratings.Sum(x => x.Rating) / x.Ratings.Count : 0);
+                }
+                else if( sort == "10-0")
+                {
+                    moviesQuery = moviesQuery.OrderByDescending(x => x.Ratings.Any()
+                    ? (double)x.Ratings.Sum(x => x.Rating) / x.Ratings.Count : 0);
+                }
             }
 
             int itemsCount = await moviesQuery.CountAsync();
