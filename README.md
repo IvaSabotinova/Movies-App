@@ -12,7 +12,7 @@ width="160px">
 
 ### Short Description
 
-The app has a **public part** available without authentication. It reveals all movies, their details as well as enables searches by whole or part of movies' titles, searches per genre and sorting by name A-Z and Z-A. Pagination by different page size is also implemented.
+The app has a **public part** available without authentication. It reveals all movies, their details as well as enables searches by whole or part of movies' titles, searches per genre and sorting by: name A-Z, name Z-A, rating 0-10 and rating 10-0. Pagination by different page size is also implemented.
 
 There are two basic roles - **admin** and **user**.
 
