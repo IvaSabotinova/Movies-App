@@ -16,9 +16,11 @@ The app has a **public part** available without authentication. It reveals all m
 
 There are two basic roles - **admin** and **user**.
 
-After successful log-in, a **user** can add new movie. He can also edit / delete the movies added by him.
+After successful log-in, a **user** can add new movie. He can also edit / delete the movies added by him. 
 
 The **admin** can edit / delete other users' records. He can also add / edit / delete movies.
+
+A **star rating** for logged-in users is implemented.
 
 ### Built With
 
@@ -63,13 +65,13 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Home Page - Pagination**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/6ebdfe39-ce5e-49a8-8c4a-939feb4889be" alt="HomePage-02" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a979bb21-f17e-43e3-9b47-8ccef3ddf6a2" alt="HomePage-02" width="900px">
 </p>
 
 **Home Page**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/758c8c63-d330-417b-8a13-83ce34025cdb" alt="HomePage-03" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/af762d6c-a1a5-4b11-b0d3-980766ad288e" alt="HomePage-03" width="900px">
 </p>
 
 
@@ -84,10 +86,10 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 </p>
 
 
-**Movie Details Page**
+**Movie Details Page & Star Rating Functionality**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/09e89747-3615-4462-95e3-6539bfb76c29" alt="MovieDetails" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/58ba190d-292f-4034-a19a-65248820ba77" alt="MovieDetails" width="900px">
 </p>
 
 
@@ -96,6 +98,17 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 <p align="left">
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/00ac55cd-b5e4-41d3-bda8-c8c9cc24b254" alt="Edit-Movie" width="900px">    
 </p>
+
+"**Star Rating Functionality & React-Toastify**
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/635cc9c1-4c8b-4dfc-834f-afd676880fae" alt="Edit-Movie" width="900px">    
+</p>
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a19c5b6f-1ec2-4a39-98d2-194b1dc0be68" alt="Edit-Movie" width="900px">    
+</p>
+
 
 **Register new user**
 
@@ -108,3 +121,10 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 <p align="left">
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/6eb0a112-26f1-4b01-89ce-4a40a9d5eb0a" alt="Login" width="900px">
 </p>
+
+**Successful log in**
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/9555d76f-11fb-464c-85bb-63b765a7f00a" alt="Login" width="900px">
+</p>
+
