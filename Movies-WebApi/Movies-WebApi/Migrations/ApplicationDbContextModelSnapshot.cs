@@ -318,7 +318,7 @@ namespace Movies_WebApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genres", (string)null);
 
                     b.HasData(
                         new
@@ -410,7 +410,7 @@ namespace Movies_WebApi.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movies", (string)null);
 
                     b.HasData(
                         new
@@ -613,7 +613,7 @@ namespace Movies_WebApi.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("UsersMoviesRatings");
+                    b.ToTable("UsersMoviesRatings", (string)null);
 
                     b.HasData(
                         new

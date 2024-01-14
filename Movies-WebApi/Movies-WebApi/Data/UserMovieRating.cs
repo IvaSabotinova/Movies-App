@@ -14,11 +14,11 @@ namespace MoviesWebApi.Data
 
         public virtual Movie Movie { get; set; }
 
-        public string ApplicationUserId { get; set; } //user who voted for the movie
+        public string ApplicationUserId { get; set; } //user who rated for the movie
 
         public virtual ApplicationUser ApplicationUser { get; set; }
 
-        [Range(1, 5)]
+        [Range(1, 10)]
         public int Rating { get; set; }
        
     }

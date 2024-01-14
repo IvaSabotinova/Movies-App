@@ -24,6 +24,8 @@ namespace MoviesWebApi.MappingConfiguration
                 : 0));
 
             this.CreateMap<Genre, GenreDto>();
+
+            this.CreateMap<UserMovieRatingDto, UserMovieRating>();
         }
     }
 }

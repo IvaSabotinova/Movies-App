@@ -50,5 +50,7 @@
 
         public const string UserMovieNotExits = "User and/or movie not found!";
 
+        public const string UserMovieRatingNotExist = "User's rating for that movie does not exist!";
+
     }
 }

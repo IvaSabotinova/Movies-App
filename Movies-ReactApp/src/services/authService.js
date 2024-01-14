@@ -11,8 +11,7 @@ export const Register = async (username, email, password, confirmPassword) => {
         body: JSON.stringify({ username, email, password, confirmPassword })
     }
     const response = await fetch(`${authUrl}/register`, httpHeaders);
-    const result = await response.json();
-    console.log(result)
+    const result = await response.json();    
     if (!response.ok) {
         throw result;
     }
@@ -30,8 +29,7 @@ export const Login = async (username, password) => {
         body: JSON.stringify({ username, password })
     }
     const response = await fetch(`${authUrl}/login`, httpHeaders);
-    const result = await response.json();
-    console.log(result)
+    const result = await response.json();   
     if (!response.ok) {
         throw result;
     }

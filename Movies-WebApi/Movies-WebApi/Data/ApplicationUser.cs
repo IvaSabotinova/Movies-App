@@ -11,8 +11,8 @@ namespace MoviesWebApi.Data
             this.RatedMovies = new HashSet<UserMovieRating>();
         }
 
-        public virtual ICollection<Movie> Movies { get; set; }
+        public virtual ICollection<Movie> Movies { get; set; } //created movies
 
-        public virtual ICollection<UserMovieRating> RatedMovies { get; set; }
+        public virtual ICollection<UserMovieRating> RatedMovies { get; set; } //rated movies
     }
 }

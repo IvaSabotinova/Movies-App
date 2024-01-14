@@ -43,6 +43,11 @@ export default function MovieDetails() {
         }
     }
 
+    const handleRatingUpdate = async () => {
+        const updatedMovie = await movieService.getMovieDetails(movieId);       
+        setMovie(updatedMovie.result);
+    }
+
     return (
         <div className="movie-details">
             <div className="movie-image">
@@ -52,10 +57,15 @@ export default function MovieDetails() {
                 <h2>{movie.title}</h2>
                 <div className="rating-stars">
                     <span className="bolded">Rate the movie: </span>
-                    <StarRating movieId={movieId} userId={userId}/>
+                    <StarRating
+                        movieId={movieId}
+                        title={movie.title}
+                        userId={userId}
+                        onRatingUpdate={handleRatingUpdate} />
                 </div>
-                <div className="rating-duration">
+                <div className="rating-duration">                
                     <div>
+                    <span className="bolded">Users rating: </span>
                         <span className="span-star">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +79,7 @@ export default function MovieDetails() {
                                 />
                             </svg>
                         </span>
-                        <span onClick={()=>console.log(movie)}>{movie.averageRating} rating</span>
+                        <span>{movie.averageRating?.toFixed(1)}</span>
                     </div>
                     <p><span className="bolded">Duration:</span> {movie.duration} minutes</p>
                 </div>
