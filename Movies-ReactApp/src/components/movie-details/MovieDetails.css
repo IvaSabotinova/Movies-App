@@ -5,7 +5,7 @@
     margin: 85px 50px 49px 50px;
 }
 
-.movie-image{
+.movie-image {
     max-width: 45%;
 }
 
@@ -61,10 +61,15 @@
 .rating-stars {
     display: flex;
     align-items: center;
-    justify-content: center; 
-    gap: 7px;    
+    justify-content: center;
+    gap: 7px;
 }
 
 .span-star {
     margin-right: 5px;
+}
+
+.edit-delete-watchList-buttons {
+    display: flex;
+    justify-content: space-between;
 }

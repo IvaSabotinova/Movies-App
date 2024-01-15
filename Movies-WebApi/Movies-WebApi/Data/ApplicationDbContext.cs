@@ -25,6 +25,9 @@ namespace MoviesWebApi.Data
             builder.Entity<UserMovieRating>()
               .HasKey(x => new { x.ApplicationUserId, x.MovieId });
 
+            builder.Entity<WatchList>()
+              .HasKey(x => new { x.ApplicationUserId, x.MovieId });
+
             builder.Entity<UserMovieRating>()
                .HasOne(x => x.ApplicationUser)
                .WithMany(u => u.RatedMovies)

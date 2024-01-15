@@ -36,7 +36,7 @@ export const getAllMovies = async (page, itemsPerPage, searchTerm, genreIdFilter
         sort
     });
     const response = await fetch(`${BaseUrl}/movies?${queryParams}`);
-    const result = await response.json();       
+    const result = await response.json();
     if (!response.ok) {
         throw result;
     }
@@ -45,14 +45,14 @@ export const getAllMovies = async (page, itemsPerPage, searchTerm, genreIdFilter
 
 export const getMovieDetails = async (movieId) => {
     const response = await fetch(`${BaseUrl}/movies/${movieId}`);
-    const result = await response.json();    
+    const result = await response.json();
     if (!response.ok) {
         throw result;
     }
     return result;
 }
 
-export const updateMovie = async (movieId, movieData) =>{
+export const updateMovie = async (movieId, movieData) => {
     const httpHeaders = {
         method: 'PUT',
         headers: {
@@ -77,7 +77,7 @@ export const updateMovie = async (movieId, movieData) =>{
     return result;
 }
 
-export const deleteMovie = async (movieId) =>{
+export const deleteMovie = async (movieId) => {
     const httpHeaders = {
         method: 'DELETE'
     }
@@ -91,11 +91,11 @@ export const deleteMovie = async (movieId) =>{
     }
 
     const response = await fetch(`${BaseUrl}/movies/${movieId}`, httpHeaders);
-    const result = await response.json();   
+    const result = await response.json();
     if (!response.ok) {
         throw result;
     }
 
     return result;
-
 }
+

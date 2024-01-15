@@ -16,11 +16,10 @@ namespace MoviesWebApi.Services
         Task DeleteMovie(string movieId);
 
         Task<MoviesListDto> GetAll(
-            int page, 
-            int itemsPerPage, 
-            string? searchTerm = null, 
+            int page,
+            int itemsPerPage,
+            string? searchTerm = null,
             string? genreIdFilter = null,
             string? sort = null);
-
     }
 }

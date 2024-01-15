@@ -24,7 +24,7 @@ export default function MovieItem({
             </div>
             <div className="movie-info">
                 <h3>Title: {title}</h3>
-                <p>Rating: {averageRating}</p>
+                <p>Rating: {averageRating.toFixed(1)}</p>
             </div>
         </div>
     );

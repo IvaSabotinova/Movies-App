@@ -1,17 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace MoviesWebApi.Data.Dto
+﻿namespace MoviesWebApi.Data.Dto
 {
-    public class MovieInListDto
-    {
-        public string Id { get; set; }
-
-        public string Title { get; set; }
-
-        public string GenreId {get; set;}
-
-        public string ImageUrl { get; set; }
-       
-        public double AverageRating { get; set; }
+    public class MovieInListDto : WatchListSingleMovieDto
+    {      
+         public string GenreId {get; set;}
     }
 }

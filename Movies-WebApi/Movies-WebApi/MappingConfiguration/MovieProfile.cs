@@ -26,6 +26,15 @@ namespace MoviesWebApi.MappingConfiguration
             this.CreateMap<Genre, GenreDto>();
 
             this.CreateMap<UserMovieRatingDto, UserMovieRating>();
+
+            this.CreateMap<WatchListDto, WatchList>();
+
+            this.CreateMap<Movie, WatchListSingleMovieDto>()
+                .ForMember(x => x.AverageRating, opt => opt
+                .MapFrom(src => src.Ratings.Any()
+                ? (double)src.Ratings.Sum(x => x.Rating) / src.Ratings.Count
+                : 0));
+
         }
     }
 }

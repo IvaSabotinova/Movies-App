@@ -38,7 +38,7 @@ namespace MoviesWebApi.Services
         => await this.moviesRepo.AllAsNoTracking()
                .Where(x => x.Id == movieId)
                .Include(x => x.ApplicationUser)
-               .Include(x => x.Genre)      
+               .Include(x => x.Genre)
                .ProjectTo<MovieDetailsDto>(this.mapper.ConfigurationProvider)
                .FirstAsync();
 
@@ -106,7 +106,7 @@ namespace MoviesWebApi.Services
                     moviesQuery = moviesQuery.OrderBy(x => x.Ratings.Any()
                     ? (double)x.Ratings.Sum(x => x.Rating) / x.Ratings.Count : 0);
                 }
-                else if( sort == "10-0")
+                else if (sort == "10-0")
                 {
                     moviesQuery = moviesQuery.OrderByDescending(x => x.Ratings.Any()
                     ? (double)x.Ratings.Sum(x => x.Rating) / x.Ratings.Count : 0);
@@ -132,6 +132,5 @@ namespace MoviesWebApi.Services
                 Sort = sort,
             };
         }
-
     }
 }

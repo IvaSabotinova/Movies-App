@@ -4,13 +4,16 @@ import { toast } from 'react-toastify';
 
 import './MovieDetails.css';
 
+import ToastNotify from '../../toast/ToastNotify';
 import * as movieService from '../../services/movieService';
+import * as watchListService from '../../services/watchListService';
 import { formatDetailsDate } from '../../utils/dateUtil';
 import { pathToUrl } from '../../utils/pathsUtil';
 import AuthContext from '../../contexts/AuthContext';
 import MovieContext from '../../contexts/MovieContext';
 import Paths from '../../constants/Paths';
 import StarRating from '../star-rating/StarRating';
+
 
 
 export default function MovieDetails() {
@@ -44,8 +47,20 @@ export default function MovieDetails() {
     }
 
     const handleRatingUpdate = async () => {
-        const updatedMovie = await movieService.getMovieDetails(movieId);       
+        const updatedMovie = await movieService.getMovieDetails(movieId);
         setMovie(updatedMovie.result);
+    }
+
+    const handleAddToWatchList = async () => {
+        try {
+            await watchListService.addToWatchList(userId, movieId);
+            ToastNotify(`You have successfully added ${movie.title.toUpperCase()} to your watch list!`, "success");
+            navigate(pathToUrl(Paths.WatchList, { userId }));
+        } catch (err) {
+            ToastNotify(err, "error")
+            console.error(err);
+        }
+
     }
 
     return (
@@ -63,9 +78,9 @@ export default function MovieDetails() {
                         userId={userId}
                         onRatingUpdate={handleRatingUpdate} />
                 </div>
-                <div className="rating-duration">                
+                <div className="rating-duration">
                     <div>
-                    <span className="bolded">Users rating: </span>
+                        <span className="bolded">Users rating: </span>
                         <span className="span-star">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -94,17 +109,26 @@ export default function MovieDetails() {
                     <span><span className="bolded">Release date:</span> {formatDetailsDate(movie.releaseDate)}</span>
                     <button onClick={() => { navigate(-1) }}>Back</button>
                 </div>
-                {(movie.applicationUserUserName === username || username === 'admin') &&
-                    <div className="edit-delete-buttons mt-2">
-                        <button className="btn btn-info" onClick={() => navigate(pathToUrl(Paths.UpdateMovie, { movieId }))}>
-                            <i className="bi bi-pencil-fill"></i> Edit
-                        </button>
-                        <button className="btn btn-danger mx-2" onClick={deleteMovie}>
-                            <i className="bi bi-trash-fill"></i> Delete
-                        </button>
-                    </div>}
+
+                <div className="edit-delete-watchList-buttons mt-2">
+                    {username && <button className="btn btn-success"
+                        onClick={handleAddToWatchList}>
+                        <i class="bi bi-collection-play-fill"></i> Add To Watchlist
+                    </button>}
+                    {(movie.applicationUserUserName === username || username === 'admin') &&
+                        <div className="edit-delete-buttons">
+                            <button className="btn btn-info" onClick={() => navigate(pathToUrl(Paths.UpdateMovie, { movieId }))}>
+                                <i className="bi bi-pencil-fill"></i> Edit
+                            </button>
+                            <button className="btn btn-danger ms-2" onClick={deleteMovie}>
+                                <i className="bi bi-trash-fill"></i> Delete
+                            </button>
+                        </div>}
+
+                </div>
             </div>
 
         </div>
     );
 }
+

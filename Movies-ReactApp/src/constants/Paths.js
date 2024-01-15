@@ -10,6 +10,7 @@ const Paths = {
     Logout: '/logout',
     CreateMovie: '/create-movie',
     UpdateMovie: '/update-movie/:movieId',  
+    WatchList: '/watchList/:userId',
     NotFound: '*'
 }
 
