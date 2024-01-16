@@ -152,3 +152,9 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 <p align="left">
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/c4a8e190-85ae-43c2-b528-2ae559620cf8" alt="Login" width="900px">
 </p>
+
+**Removing movie from watch list**
+
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/62b4f537-e68d-4f73-8f1c-987dbc7b6ffc" alt="Login" width="900px">
+</p>
