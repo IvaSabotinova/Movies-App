@@ -53,9 +53,23 @@ export default function MovieDetails() {
 
     const handleAddToWatchList = async () => {
         try {
-            await watchListService.addToWatchList(userId, movieId);
-            ToastNotify(`You have successfully added ${movie.title.toUpperCase()} to your watch list!`, "success");
-            navigate(pathToUrl(Paths.WatchList, { userId }));
+            const watchListItemExist = await watchListService.getWatchListItemExist(userId, movieId);
+
+            if (watchListItemExist.isSuccess) {
+                if (!watchListItemExist.result) {
+                    await watchListService.addToWatchList(userId, movieId);
+                    ToastNotify(`You have successfully added ${movie.title.toUpperCase()} to your watch list!`, "success");
+                    navigate(pathToUrl(Paths.WatchList, { userId }));
+                } else {
+                    ToastNotify(`You already have ${movie.title.toUpperCase()} in your watch list!`, "info");
+                    navigate(pathToUrl(Paths.WatchList, { userId }));
+                }
+
+            } else {
+                ToastNotify("Oops! Something went wrong! Please try again!", "error")
+            }
+
+
         } catch (err) {
             ToastNotify(err, "error")
             console.error(err);

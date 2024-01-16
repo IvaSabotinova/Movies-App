@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import './Login.css';
 
@@ -22,8 +22,7 @@ const Login = () => {
         [LoginFormKeys.Username]: '',
         [LoginFormKeys.Password]: ''
     });
-
-    const navigate = useNavigate();
+   
 
     const validateUsername = () => {
         if (formValues.username.length < 3 || formValues.username.length > 30) {
@@ -59,7 +58,7 @@ const Login = () => {
         }
         try {
             loginSubmitHandler(formValues);
-            navigate(Paths.Home)
+        
         } catch (err) {
             console.log(err)
         }

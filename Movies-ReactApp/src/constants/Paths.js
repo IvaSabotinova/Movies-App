@@ -1,5 +1,4 @@
 
-//export const BaseUrl = "https://localhost:7224/api";
 export const BaseUrl = "https://localhost:5000/api";
 
 const Paths = {

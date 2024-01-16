@@ -15,9 +15,8 @@ export default function Header() {
 
   return (
     <Navbar expand="lg" className='header fixed-top'>
-      <Container fluid>
-        {/* <Navbar.Brand href="">Navbar scroll</Navbar.Brand> */}
-        <Navbar.Toggle aria-controls="navbarScroll" />       
+      <Container fluid>       
+        <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse className='d-flex' id="navbarScroll" style={{ height: '50px' }}>
           <Nav className="my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
             <Image src={popcornSodaImage} alt="popcornSodaImage" style={{ maxHeight: '35px' }} roundedCircle />
@@ -27,22 +26,12 @@ export default function Header() {
                 <Nav.Link as={NavLink} to={Paths.CreateMovie} className="text-white" >Add Movie</Nav.Link>
                 <Nav.Link as={NavLink} to={pathToUrl(Paths.WatchList, { userId })} className="text-white" >Watchlist</Nav.Link>
               </>}
-            {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="">Action</NavDropdown.Item>
-              <NavDropdown.Item href="">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown> */}
           </Nav>
           <Nav className="mx-auto">
             {isAuthenticated &&
               <Nav.Link
                 className="text-white"
-                style={{ fontWeight: "600", fontSize: "22px", fontFamily: "cursive", marginLeft:"75px" }}>
+                style={{ fontWeight: "600", fontSize: "22px", fontFamily: "cursive", marginLeft: "75px" }}>
                 Welcome, {username}!
               </Nav.Link>}
           </Nav>

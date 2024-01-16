@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using MoviesWebApi.Data;
@@ -131,6 +132,7 @@ namespace MoviesWebApi.Controllers
 
         }
 
+        [Authorize]
         [HttpGet("logout")]
         public async Task<IActionResult> Logout()
         {

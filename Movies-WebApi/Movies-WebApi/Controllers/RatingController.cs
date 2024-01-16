@@ -8,8 +8,7 @@ using System.Net;
 using static MoviesWebApi.Data.Constants;
 
 namespace MoviesWebApi.Controllers
-{
-    //[Route("api/[controller]")]
+{    
     [Route("api/ratings")]
     [ApiController]
     public class RatingController : ControllerBase
@@ -31,7 +30,7 @@ namespace MoviesWebApi.Controllers
             {
                 bool userExists = await this.ratingService.UserExists(userId);
                 bool movieExists = await this.ratingService.MovieExists(movieId);
-                if (userId == null || movieId == null)
+                if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(movieId))
                 {
                     this.apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
                     this.apiResponse.IsSuccess = false;
@@ -93,7 +92,8 @@ namespace MoviesWebApi.Controllers
                 {
                     bool userExists = await this.ratingService.UserExists(userMovieRatingDto.ApplicationUserId);
                     bool movieExists = await this.ratingService.MovieExists(userMovieRatingDto.MovieId);
-                    if (userMovieRatingDto.ApplicationUserId == null || userMovieRatingDto.MovieId == null)
+                    if (string.IsNullOrWhiteSpace(userMovieRatingDto.ApplicationUserId) 
+                        || string.IsNullOrWhiteSpace(userMovieRatingDto.MovieId))
                     {
                         this.apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
                         this.apiResponse.IsSuccess = false;
@@ -145,7 +145,8 @@ namespace MoviesWebApi.Controllers
                 {
                     bool userExists = await this.ratingService.UserExists(userMovieRatingDto.ApplicationUserId);
                     bool movieExists = await this.ratingService.MovieExists(userMovieRatingDto.MovieId);
-                    if (userMovieRatingDto.ApplicationUserId == null || userMovieRatingDto.MovieId == null)
+                    if (string.IsNullOrWhiteSpace(userMovieRatingDto.ApplicationUserId)
+                        || string.IsNullOrWhiteSpace(userMovieRatingDto.MovieId))
                     {
                         this.apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
                         this.apiResponse.IsSuccess = false;

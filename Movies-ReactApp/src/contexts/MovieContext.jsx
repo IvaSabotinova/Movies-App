@@ -36,16 +36,14 @@ export const MovieProvider = ({
     }, []);
 
     const createMovieHandler = async (movie) => {
-        const newMovie = await movieService.createMovie(movie);
-        console.log(newMovie);
+        const newMovie = await movieService.createMovie(movie);        
         fetchMovies(1, 4, '', '', '');
         ToastNotify("Movie created successfully!", "success");
         navigate(pathToUrl(Paths.MovieDetails, { movieId: newMovie.result.id }))
     }
 
     const updateMovieHandler = async (movieId, movie) => {
-        const editedMovie = await movieService.updateMovie(movieId, movie);
-        console.log(editedMovie);
+        const editedMovie = await movieService.updateMovie(movieId, movie);        
         fetchMovies(1, 4, '', '', '');
         ToastNotify("Movie updated successfully!", "success");
         navigate(pathToUrl(Paths.MovieDetails, { movieId }))

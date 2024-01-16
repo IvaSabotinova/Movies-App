@@ -3,8 +3,7 @@ using MoviesWebApi.Data.Dto;
 using MoviesWebApi.Services;
 
 namespace MoviesWebApi.Controllers
-{
-    //[Route("api/[controller]")]
+{    
     [Route("api/genres")]
     [ApiController]
     public class GenreController : ControllerBase

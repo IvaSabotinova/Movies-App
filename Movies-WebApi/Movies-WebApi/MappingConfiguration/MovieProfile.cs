@@ -27,7 +27,7 @@ namespace MoviesWebApi.MappingConfiguration
 
             this.CreateMap<UserMovieRatingDto, UserMovieRating>();
 
-            this.CreateMap<WatchListMovieDto, WatchList>();
+            this.CreateMap<WatchListItemDto, WatchList>();
 
             this.CreateMap<Movie, WatchListMovieDetailsDto>()
                 .ForMember(x => x.AverageRating, opt => opt

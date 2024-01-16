@@ -20,7 +20,9 @@ After successful log-in, a **user** can add new movie. He can also edit / delete
 
 The **admin** can edit / delete other users' records. He can also add / edit / delete movies.
 
-A **star rating** for logged-in users is implemented.
+A **star rating** functionality for logged-in users is implemented.
+
+Every logged-in user can also make his own **watch list** of movies.
 
 ### Built With
 
@@ -89,42 +91,42 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Home Page**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/af762d6c-a1a5-4b11-b0d3-980766ad288e" alt="HomePage-06" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/6d4a7bea-d69e-4465-b674-87df5b338665" alt="HomePage-06" width="900px">
 </p>
 
 
 **Add New Movie**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/ac74ddbc-cb6b-4317-b300-fb71f338f645" alt="Add-New-Movie01" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/b5b25c7a-c914-45f8-bc3b-9ad4b464d7b6" alt="Add-New-Movie01" width="900px">
 </p>
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/0d173f5d-cbde-4915-a564-6174424ac0a9" alt="Add-New-Movie02" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/06cea231-ba6d-48ef-a9b7-95cbd8dd85ef" alt="Add-New-Movie02" width="900px">
 </p>
 
 
 **Movie Details Page & Star Rating Functionality**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/58ba190d-292f-4034-a19a-65248820ba77" alt="MovieDetails" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/8e7299cb-0b06-43e3-9167-4623f8197079" alt="MovieDetails" width="900px">
 </p>
 
 
 **Edit Movie**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/00ac55cd-b5e4-41d3-bda8-c8c9cc24b254" alt="Edit-Movie" width="900px">    
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/2e78444a-d01a-48fb-913d-7f501179009e" alt="Edit-Movie" width="900px">    
 </p>
 
 **Star Rating Functionality & React-Toastify**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/635cc9c1-4c8b-4dfc-834f-afd676880fae" alt="star-rating-new" width="900px">    
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/7cf199e6-5734-44d5-8e9d-7e7c0647a62d" alt="star-rating-new" width="900px">    
 </p>
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/a19c5b6f-1ec2-4a39-98d2-194b1dc0be68" alt="star-rating-update" width="900px">    
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/7f7a5fd6-694c-44d8-8ecd-6fb3757d468c" alt="star-rating-update" width="900px">    
 </p>
 
 
@@ -140,9 +142,13 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
     <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/6eb0a112-26f1-4b01-89ce-4a40a9d5eb0a" alt="Login" width="900px">
 </p>
 
-**Successful log in**
+**Adding movies to watch list**
+
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/2946f04a-3327-4260-86a0-8198772af5f8" alt="login-toastify" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/81af05f4-c597-4887-89d2-f978254a390f" alt="Login" width="900px">
 </p>
 
+<p align="left">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/c4a8e190-85ae-43c2-b528-2ae559620cf8" alt="Login" width="900px">
+</p>

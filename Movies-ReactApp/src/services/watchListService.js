@@ -44,6 +44,26 @@ export const getWatchList = async (userId) => {
     return result;
 }
 
+//checks if a movie with movieId is in the watch list of a user with userId
+//and returns true or false
+export const getWatchListItemExist = async (userId, movieId) => {
+    const httpHeaders = {};
+
+    const token = JSON.parse(localStorage.getItem("auth"))?.token;
+    if (token) {
+        httpHeaders.headers = {
+            "Authorization": `Bearer ${token}`
+        }
+    }
+    const response = await fetch(`${BaseUrl}/watchList/${userId}/${movieId}`, httpHeaders);
+    const result = await response.json();
+       
+    if (!response.ok) {
+        throw result;
+    }
+    return result;
+}
+
 
 export const deleteMovieFromWatchList = async (userId, movieId)=>{
     const httpHeaders = {

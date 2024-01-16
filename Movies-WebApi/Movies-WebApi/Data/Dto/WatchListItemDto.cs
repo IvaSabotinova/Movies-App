@@ -1,6 +1,6 @@
 ﻿namespace MoviesWebApi.Data.Dto
 {
-    public class WatchListMovieDto
+    public class WatchListItemDto
     {        
         public string ApplicationUserId { get; set; }
        

@@ -17,33 +17,32 @@ export const AuthProvider = ({
     const [auth, setAuth] = useLocalStorage('auth', {});
     const navigate = useNavigate();
 
-    const registerSubmitHandler = async (data) => {          
+    const registerSubmitHandler = async (data) => {
         try {
-            const result = await authService.Register(data.username, data.email, data.password, data.confirmPassword);  
+            const result = await authService.Register(data.username, data.email, data.password, data.confirmPassword);
             ToastNotify('User registered successfully!', 'success');
             navigate(Paths.Login);
         } catch (err) {
             console.log("Registration failed", err);
             ToastNotify(err.errorMessages[1], 'error');
-        }    
-       
+        }
+
     }
 
     const loginSubmitHandler = async (data) => {
         try {
             const result = await authService.Login(data.username, data.password);
-            setAuth(result.result);        
-            ToastNotify("User logged in successfully!", "success")            
+            setAuth(result.result);
+            ToastNotify("User logged in successfully!", "success")
             navigate(Paths.Home)
         } catch (err) {
-            console.log("Login failed:", err); 
-            ToastNotify(err.errorMessages[0], "error")     
-            navigate(Paths.Register)   
+            console.log("Login failed:", err);
+            ToastNotify(err.errorMessages[0], "error")
         }
     }
 
-    const logOutHandler = ()=>{
-        setAuth({});       
+    const logOutHandler = () => {
+        setAuth({});
         navigate(Paths.Home)
     }
 

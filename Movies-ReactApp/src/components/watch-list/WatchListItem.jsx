@@ -8,13 +8,13 @@ export default function WatchListItem({
     id,
     title,
     averageRating,
-    imageUrl, 
+    imageUrl,
     handleDelete
 }) {
 
     const navigate = useNavigate();
 
-    const onClickDelete = ()=>{
+    const onClickDelete = () => {
         handleDelete(id, title);
     }
 
@@ -31,7 +31,7 @@ export default function WatchListItem({
                 <div className="watchList-button" >
                     <button
                         className="watchList-details btn btn-success"
-                        onClick={() => navigate(pathToUrl(Paths.MovieDetails, { movieId: id}))}>Details</button>
+                        onClick={() => navigate(pathToUrl(Paths.MovieDetails, { movieId: id }))}>Details</button>
                     <button className="watchList-remove" onClick={onClickDelete}>Remove</button>
                 </div>
             </div>

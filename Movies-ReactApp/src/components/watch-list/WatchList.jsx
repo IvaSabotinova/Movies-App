@@ -24,12 +24,13 @@ export default function WatchList() {
             if (hasConfirmed) {
                 await watchListService.deleteMovieFromWatchList(userId, id);
                 setWatchList(state => (state.filter(x => x.id !== id)));
+                ToastNotify(`${title.toUpperCase()} successfully removed from watch list!`, "success");
             }
         } catch (err) {
             console.log(err);
             ToastNotify("Oops! A problem occurred! Try again!", "error");
         }
-       
+
 
     }
 

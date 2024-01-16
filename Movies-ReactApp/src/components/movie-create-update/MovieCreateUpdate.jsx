@@ -99,6 +99,7 @@ export default function MovieCreateUpdate() {
     }
   }
 
+
   const changeHandler = (e) => {
     let value = '';
     switch (e.target.type) {
@@ -141,6 +142,12 @@ export default function MovieCreateUpdate() {
     validateDescription();
     validateDuration();
     validateReleaseDate();
+
+
+    if (movie.imageUrl === '') {
+      ToastNotify("Please add an image for the movie!", "warning");
+      return;
+    }
 
     if (errors.title != ''
       || errors.genreId != ''

@@ -20,6 +20,8 @@ namespace MoviesWebApi.Data
 
         public DbSet<UserMovieRating> UsersMoviesRatings { get; set; }
 
+        public DbSet<WatchList>WatchLists { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<UserMovieRating>()

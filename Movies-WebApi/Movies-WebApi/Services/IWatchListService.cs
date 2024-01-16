@@ -5,11 +5,13 @@ namespace MoviesWebApi.Services
 {
     public interface IWatchListService
     {
-        Task<WatchList> AddToWatchList(WatchListMovieDto watchListMovieDto);
+        Task<WatchList> AddToWatchList(WatchListItemDto watchListItemDto);
+
+        Task<bool> WatchListItemExist(string userId, string movieId);
 
         Task<IEnumerable<WatchListMovieDetailsDto>> GetWatchList(string userId);
 
-        Task RemoveWatchListMovie(WatchListMovieDto watchListMovieDto);
+        Task RemoveWatchListMovie(WatchListItemDto watchListItemDto);
 
     }
 }

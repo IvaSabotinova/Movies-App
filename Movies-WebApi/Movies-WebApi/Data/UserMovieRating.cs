@@ -4,12 +4,6 @@ namespace MoviesWebApi.Data
 {
     public class UserMovieRating
     {
-        //public UserMovieRating()
-        //{
-        //    this.Id = Guid.NewGuid().ToString();
-        //}
-        //public string Id { get; set; }
-
         public string MovieId { get; set; }
 
         public virtual Movie Movie { get; set; }

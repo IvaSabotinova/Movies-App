@@ -53,8 +53,7 @@ namespace MoviesWebApi.Controllers
             }
             catch (Exception ex)
             {
-                this.apiResponse.IsSuccess = false;
-                // this.apiResponse.ErrorMessages = new List<string> { ex.ToString() };
+                this.apiResponse.IsSuccess = false;               
                 this.apiResponse.ErrorMessages = new List<string> { ex.Message };
             }
             return this.apiResponse;

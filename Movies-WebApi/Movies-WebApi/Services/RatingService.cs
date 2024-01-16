@@ -37,7 +37,7 @@ namespace MoviesWebApi.Services
 
         public async Task<bool> RatingExists(string userId, string movieId)
         => await this.userMovieRatingRepo.AllAsNoTracking()
-                .AnyAsync(x => x.MovieId == movieId && x.ApplicationUserId == userId);
+                .AnyAsync(x => x.ApplicationUserId == userId && x.MovieId == movieId);
 
         public async Task<UserMovieRating> GetUserMovieRating(string userId, string movieId)
         => await this.userMovieRatingRepo.All()
