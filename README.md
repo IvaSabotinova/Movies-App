@@ -35,15 +35,15 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 2. Write your own connection string in appsettings.json in Movies-WebApi project
 3. Open or download and open MSSQLServer instance
 4. In directory "/Movies-WebApi/Movies-WebApi", open command terminal and run:
-  ```sh
+   ```sh
    dotnet ef migrations add InitialCreate
    ```
 
-     ```sh
+   ```sh
    dotnet ef database update
    ```
 
-     ```sh
+   ```sh
    dotnet run
    ```
 
