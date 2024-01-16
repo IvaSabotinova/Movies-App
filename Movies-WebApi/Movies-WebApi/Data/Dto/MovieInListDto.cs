@@ -1,6 +1,6 @@
 ﻿namespace MoviesWebApi.Data.Dto
 {
-    public class MovieInListDto : WatchListSingleMovieDto
+    public class MovieInListDto : WatchListMovieDetailsDto
     {      
          public string GenreId {get; set;}
     }

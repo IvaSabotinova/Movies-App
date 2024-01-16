@@ -30,15 +30,15 @@ namespace MoviesWebApi.Controllers
         [Authorize]
         [HttpPost]
 
-        public async Task<ActionResult<ApiResponse>> AddToWatchList(WatchListDto watchListDto)
+        public async Task<ActionResult<ApiResponse>> AddToWatchList(WatchListMovieDto watchListMovieDto)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    bool userExists = await this.ratingService.UserExists(watchListDto.ApplicationUserId);
-                    bool movieExists = await this.ratingService.MovieExists(watchListDto.MovieId);
-                    if (watchListDto.ApplicationUserId == null || watchListDto.MovieId == null)
+                    bool userExists = await this.ratingService.UserExists(watchListMovieDto.ApplicationUserId);
+                    bool movieExists = await this.ratingService.MovieExists(watchListMovieDto.MovieId);
+                    if (watchListMovieDto.ApplicationUserId == null || watchListMovieDto.MovieId == null)
                     {
                         this.apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
                         this.apiResponse.IsSuccess = false;
@@ -60,7 +60,7 @@ namespace MoviesWebApi.Controllers
                         this.apiResponse.ErrorMessages = new List<string> { MovieDoesNotExist };
                         return this.NotFound(this.apiResponse);
                     }
-                    WatchList newWatchListMovie = await this.watchListService.AddToWatchList(watchListDto);
+                    WatchList newWatchListMovie = await this.watchListService.AddToWatchList(watchListMovieDto);
                     this.apiResponse.HttpStatusCode = HttpStatusCode.Created;
                     this.apiResponse.Result = newWatchListMovie;
                     return this.Ok(this.apiResponse);
@@ -79,7 +79,7 @@ namespace MoviesWebApi.Controllers
             return this.apiResponse;
         }
 
-       // [Authorize]
+        [Authorize]
         [HttpGet("{userId}")]
 
         public async Task<ActionResult<ApiResponse>> GetWatchList(string userId)
@@ -94,7 +94,7 @@ namespace MoviesWebApi.Controllers
                     this.apiResponse.ErrorMessages = new List<string> { UserNotFound };
                     return this.NotFound(this.apiResponse);
                 }
-                IEnumerable<WatchListSingleMovieDto> watchList = await this.watchListService.GetWatchList(userId);
+                IEnumerable<WatchListMovieDetailsDto> watchList = await this.watchListService.GetWatchList(userId);
                 this.apiResponse.HttpStatusCode = HttpStatusCode.OK;
                 this.apiResponse.Result = watchList;
                 return this.Ok(this.apiResponse);
@@ -106,6 +106,26 @@ namespace MoviesWebApi.Controllers
                 this.apiResponse.ErrorMessages = new List<string> { ex.Message };
                 return this.apiResponse;
             }
+        }
+
+        [HttpDelete]
+        [Authorize]
+        public async Task<ActionResult<ApiResponse>> DeleteWatchListMovie(WatchListMovieDto watchListMovieDto)
+        {
+            try
+            {
+                await this.watchListService.RemoveWatchListMovie(watchListMovieDto);
+                this.apiResponse.HttpStatusCode = HttpStatusCode.NoContent;
+                return this.Ok(this.apiResponse);
+            }
+            catch (Exception ex)
+            {
+                this.apiResponse.HttpStatusCode = HttpStatusCode.BadRequest;
+                this.apiResponse.IsSuccess = false;
+                this.apiResponse.ErrorMessages = new List<string> { ex.Message };
+            }
+
+            return this.apiResponse;
         }
 
     }

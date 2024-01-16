@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MoviesWebApi.Common;
 using MoviesWebApi.Data;
 using MoviesWebApi.Data.Dto;
+using static MoviesWebApi.Data.Constants;
 
 namespace MoviesWebApi.Services
 {
@@ -19,23 +20,32 @@ namespace MoviesWebApi.Services
             this.watchListRepo = watchListRepo;
             this.mapper = mapper;
         }
-        public async Task<WatchList> AddToWatchList(WatchListDto watchListDto)
+        public async Task<WatchList> AddToWatchList(WatchListMovieDto watchListMovieDto)
         {
-            WatchList newWatchList = this.mapper.Map<WatchList>(watchListDto);
+            WatchList newWatchList = this.mapper.Map<WatchList>(watchListMovieDto);
             await this.watchListRepo.AddAsync(newWatchList);
             await this.watchListRepo.SaveChangesAsync();
 
             return newWatchList;
         }
 
-        public async Task<IEnumerable<WatchListSingleMovieDto>> GetWatchList(string userId)
+        public async Task<IEnumerable<WatchListMovieDetailsDto>> GetWatchList(string userId)
         => await this.watchListRepo.AllAsNoTracking()
                .Where(x => x.ApplicationUserId == userId)
                .Include(x => x.Movie)
                .Select(x => x.Movie)
-               .ProjectTo<WatchListSingleMovieDto>(this.mapper.ConfigurationProvider)
+               .ProjectTo<WatchListMovieDetailsDto>(this.mapper.ConfigurationProvider)
                .ToListAsync();
 
-        
+        public async Task RemoveWatchListMovie(WatchListMovieDto watchListMovieDto)
+        {
+            WatchList watchListMovie  = await this.watchListRepo.All()
+                .FirstOrDefaultAsync(x=>x.ApplicationUserId == watchListMovieDto.ApplicationUserId
+                && x.MovieId == watchListMovieDto.MovieId)
+                ?? throw new NullReferenceException(WatchListNotExist);
+
+            this.watchListRepo.Delete(watchListMovie);
+            await this.watchListRepo.SaveChangesAsync();
+        }
     }
 }

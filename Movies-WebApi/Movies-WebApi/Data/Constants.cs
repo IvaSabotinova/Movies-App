@@ -52,5 +52,7 @@
 
         public const string UserMovieRatingNotExist = "User's rating for that movie does not exist!";
 
+        public const string WatchListNotExist = "The movie is not in user's watch list!";
+
     }
 }

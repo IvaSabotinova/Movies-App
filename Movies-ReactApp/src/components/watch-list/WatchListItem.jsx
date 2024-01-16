@@ -4,13 +4,20 @@ import './WatchList.css';
 import { pathToUrl } from '../../utils/pathsUtil';
 import Paths from '../../constants/Paths';
 
-export default function WatchListSingleMovie({
+export default function WatchListItem({
     id,
     title,
     averageRating,
-    imageUrl
+    imageUrl, 
+    handleDelete
 }) {
+
     const navigate = useNavigate();
+
+    const onClickDelete = ()=>{
+        handleDelete(id, title);
+    }
+
     return (
         <div className="single-movie">
             <div className="watch-image">
@@ -25,7 +32,7 @@ export default function WatchListSingleMovie({
                     <button
                         className="watchList-details btn btn-success"
                         onClick={() => navigate(pathToUrl(Paths.MovieDetails, { movieId: id}))}>Details</button>
-                    <button className="watchList-remove">Remove</button>
+                    <button className="watchList-remove" onClick={onClickDelete}>Remove</button>
                 </div>
             </div>
         </div>
