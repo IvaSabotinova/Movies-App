@@ -31,11 +31,23 @@ Front-End - [ReactJS](https://react.dev/)
 Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio)
 
 ### Getting started
-1. Clone the repo
-   ```sh
-   git clone https://github.com/IvaSabotinova/Movies-App.git
+1. Download the project
+2. Write your own connection string in appsettings.json in Movies-WebApi project
+3. Open or download and open MSSQLServer instance
+4. In directory "/Movies-WebApi/Movies-WebApi", open command terminal and run:
+  ```sh
+   dotnet ef migrations add InitialCreate
    ```
-2. In directory "/Movies-ReactApp", open command terminal and run:
+
+     ```sh
+   dotnet ef database update
+   ```
+
+     ```sh
+   dotnet run
+   ```
+
+5. In directory "/Movies-ReactApp", open command terminal and run:
    ```sh
    npm install
    ```
@@ -43,10 +55,7 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
    ```sh
    npm run dev
    ```
-4. In directory "/Movies-WebApi/Movies-WebApi", open command terminal and run:
-   ```sh
-   dotnet run
-   ```
+
 ### Users
 
 | Username  | Password  | 
