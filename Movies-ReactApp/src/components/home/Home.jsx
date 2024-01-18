@@ -10,7 +10,8 @@ import MovieItem from './MovieItem';
 import Loader from '../loader/Loader';
 
 export default function Home() {
-    const { apiResponse, isLoading, fetchMovies } = useContext(MovieContext);
+    const { apiResponse, isLoadingMovies, fetchMovies } = useContext(MovieContext);
+    const [isLoadingGenres, setIsLoadingGenres] = useState(true);
     const [genres, setGenres] = useState([]);
     const [filters, setFilters] = useState({
         searchTerm: '',
@@ -24,10 +25,16 @@ export default function Home() {
 
     useEffect(() => {
         genreService.getAllGenres()
-            .then(setGenres)
+            .then((res) => {
+                setGenres(res)
+                setIsLoadingGenres(false);
+            })
+            .catch((err) => {
+                console.error('Error fetching genres:', err);
+            });
     }, []);
 
-    const changeHandler = (e) => {      
+    const changeHandler = (e) => {
         setFilters(state => ({ ...state, [e.target.name]: e.target.value }));
         setPageOptions(state => ({ ...state, page: 1 }))
     }
@@ -55,6 +62,7 @@ export default function Home() {
         setPageOptions({ page: 1, pageSize: newPageSize });
     }
 
+
     return (
         <>
             <div className="wrapper">
@@ -68,7 +76,7 @@ export default function Home() {
                         onChange={changeHandler}
                     >
                         <option value="" disabled="">Search By Genre</option>
-                        {genres.map(genre => (
+                        {!isLoadingGenres && genres.map(genre => (
                             <option key={genre.id} value={genre.id}>{genre.name}</option>
                         ))}
                     </select>
@@ -105,9 +113,10 @@ export default function Home() {
                 </div>
 
                 <div className="main">
-                    {isLoading && <Loader />}
-                    {!isLoading && apiResponse.movies.length === 0 && <p className="no-movies">No movies found by these criteria!</p>}
-                    {!isLoading && apiResponse.movies.length > 0 && (
+                    {(isLoadingMovies || isLoadingGenres) && <Loader />}
+                    {!isLoadingMovies && !isLoadingGenres && apiResponse.movies?.length === 0
+                        && <p className="no-movies">No movies found by these criteria!</p>}
+                    {!isLoadingMovies && !isLoadingGenres && apiResponse.movies?.length > 0 && (
                         <>
                             <div className="movies-list">
                                 {apiResponse.movies.map(movie => (<MovieItem

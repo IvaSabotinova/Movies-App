@@ -14,20 +14,18 @@ MovieContext.displayName = 'MovieContext';
 export const MovieProvider = ({
     children
 }) => {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoadingMovies, setIsLoadingMovies] = useState(true);
     const [apiResponse, setApiResponse] = useState({});
     const navigate = useNavigate();
 
-    const fetchMovies = (page, itemsPerPage, searchTerm, genreIdFilter, sort) => {       
+    const fetchMovies = (page, itemsPerPage, searchTerm, genreIdFilter, sort) => {
         movieService.getAllMovies(page, itemsPerPage, searchTerm, genreIdFilter, sort)
             .then((res) => {
-                setIsLoading(false);
+                setIsLoadingMovies(false);
                 setApiResponse(res.result)
             })
             .catch((err) => {
                 console.error("Error fetching movies:", err);
-                ToastNotify(err, "error")
-                setIsLoading(false);
             });
     }
 
@@ -36,14 +34,14 @@ export const MovieProvider = ({
     }, []);
 
     const createMovieHandler = async (movie) => {
-        const newMovie = await movieService.createMovie(movie);        
+        const newMovie = await movieService.createMovie(movie);
         fetchMovies(1, 4, '', '', '');
         ToastNotify("Movie created successfully!", "success");
         navigate(pathToUrl(Paths.MovieDetails, { movieId: newMovie.result.id }))
     }
 
     const updateMovieHandler = async (movieId, movie) => {
-        const editedMovie = await movieService.updateMovie(movieId, movie);        
+        const editedMovie = await movieService.updateMovie(movieId, movie);
         fetchMovies(1, 4, '', '', '');
         ToastNotify("Movie updated successfully!", "success");
         navigate(pathToUrl(Paths.MovieDetails, { movieId }))
@@ -56,7 +54,7 @@ export const MovieProvider = ({
 
     const movieContextValues = {
         apiResponse,
-        isLoading,
+        isLoadingMovies,
         createMovieHandler,
         updateMovieHandler,
         deleteMovieHandler,
