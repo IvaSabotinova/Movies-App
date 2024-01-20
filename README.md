@@ -107,11 +107,11 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Add New Movie**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/b5b25c7a-c914-45f8-bc3b-9ad4b464d7b6" alt="Add-New-Movie01" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/ac89938c-34d8-4cec-adb7-b6cdad67385e" alt="Add-New-Movie01" width="900px">
 </p>
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/06cea231-ba6d-48ef-a9b7-95cbd8dd85ef" alt="Add-New-Movie02" width="900px">
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/28f1216b-4d27-4a2b-a9e8-f3ff4259c007" alt="Add-New-Movie02" width="900px">
 </p>
 
 
@@ -125,7 +125,7 @@ Back-End - [.NET Web Api](https://learn.microsoft.com/en-us/aspnet/core/tutorial
 **Edit Movie**
 
 <p align="left">
-    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/2e78444a-d01a-48fb-913d-7f501179009e" alt="Edit-Movie" width="900px">    
+    <img src="https://github.com/IvaSabotinova/Movies-App/assets/96121572/fbee2d99-e23e-4a93-9bf6-649f249d8b85" alt="Edit-Movie" width="900px">    
 </p>
 
 **Star Rating Functionality & React-Toastify**

@@ -145,7 +145,7 @@ export default function MovieCreateUpdate() {
 
 
     if (movie.imageUrl === '') {
-      ToastNotify("Please add an image for the movie!", "warning");
+      ToastNotify("Please add valid image for the movie!", "warning");
       return;
     }
 
@@ -235,7 +235,7 @@ export default function MovieCreateUpdate() {
               onBlur={validateReleaseDate}
             />
             {errors.releaseDate && (<p className="errorMessage">{errors.releaseDate}</p>)}
-            <label className="mt-2" htmlFor="imageUrl">Add Image</label>
+            <label className="mt-2" htmlFor="imageUrl">Add Image (jpeg, jpg, png)</label>
             <input
               id="imageUrl"
               name="imageUrl"
